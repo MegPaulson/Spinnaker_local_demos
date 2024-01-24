@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="623" MadCap:lastWidth="714" MadCap:disableMasterStylesheet="true" MadCap:tocPath="" MadCap:medium="doxygen" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HTML" MadCap:SectionNumber="1" MadCap:SectionNumberFormat="n" MadCap:SectionNumberText="1" style="mc-page-type: first; mc-page-layout: url('Resources/PageLayouts/doxygen.flpgl'); mc-page-layout-override: url('Resources/PageLayouts/doxygen.flpgl'); mc-chapter-number: 1; mc-chapter-number-text: 1; mc-chapter-number-format: n; mc-volume-number: 1; mc-volume-number-text: 1; mc-volume-number-format: n;" MadCap:endnoteStartIndex="0" MadCap:autonumPosition="none">
+    <head MadCap:autonumPosition="none"><title MadCap:autonumPosition="none">Programmer's Guide</title>
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" MadCap:autonumPosition="none" />
+        <link href="Resources/Stylesheets/MadCapBlaze.css" rel="stylesheet" type="text/css" MadCap:autonumPosition="none" />
+			<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		 
+		  ga('create', 'UA-56143209-1', 'auto');
+		  ga('require', 'displayfeatures');
+		  ga('require', 'linkid', 'linkid.js');
+		  ga('send', 'pageview');
+	</script>
+
+    </head>
+    <body MadCap:autonumPosition="none">
+        <h1 MadCap:xrefTargetName="C++_Programmer's_Guide_Contents" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="C++_Programmer's_Guide_Contents" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>
+            <MadCap:conditionalText MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">C++ </MadCap:conditionalText>Programmer's Guide Contents</h1>
+        <p style="margin-bottom: 0px;" MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Fundamentals of Spinnaker</b>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Architecture_of_Spinnaker_API" MadCap:autonumPosition="none">Architecture of Spinnaker</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Examples" MadCap:autonumPosition="none">Examples</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Nodes" MadCap:autonumPosition="none">Nodes</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:conditions="Spinnaker.C-Plus-Plus-API,Spinnaker.C-Sharp-API" MadCap:autonumPosition="none"><a href="#QuickSpin_API_and_Accessing_Camera_Parameters" MadCap:autonumPosition="none">QuickSpin API</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#C__Graphical_User_Interface_API" MadCap:autonumPosition="none">C# Graphical User Interface API</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Camera_XML" MadCap:autonumPosition="none">Camera XML</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Recommended_Environment" MadCap:autonumPosition="none">Recommended Development Environment</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Instantiate_Cameras" MadCap:autonumPosition="none">Instantiate a Single Camera and Multiple Cameras</a>
+        </p>
+        <p style="margin-bottom: 0px;" MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Popular Features in Spinnaker</b>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Enumeration" MadCap:autonumPosition="none">Enumeration</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Asynchronous_Hardware_Triggering" MadCap:autonumPosition="none">Asynchronous Hardware Triggering</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_Black_Level" MadCap:autonumPosition="none">Setting Black Level</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_Exposure_Time" MadCap:autonumPosition="none">Setting Exposure Time</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_Gain" MadCap:autonumPosition="none">Setting Gain</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_Gamma" MadCap:autonumPosition="none">Setting Gamma</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_White_Balance" MadCap:autonumPosition="none">Setting White Balance</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Accessing_Raw_Bayer_Data" MadCap:autonumPosition="none">Accessing Raw Bayer Data</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Setting_Number_of_Image_Buffers" MadCap:autonumPosition="none">Setting Number of Software Buffers</a>
+        </p>
+        <p style="margin-bottom: 0px;" MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Basic Features</b>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Event_Handling" MadCap:autonumPosition="none">Event Handling</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Grabbing_Images" MadCap:autonumPosition="none">Grabbing Images</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none"><a href="#Image_Pointer_Class" MadCap:autonumPosition="none">Image Pointer Class</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Error_Handling" MadCap:autonumPosition="none">Error Handling</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none"><a href="#Loading_and_Saving_Images" MadCap:autonumPosition="none">Loading and Saving Images</a>
+        </p>
+        <p style="margin-bottom: 0px;" MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Advanced Features</b>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:conditions="Spinnaker.C-Sharp-API,Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none"><a href="#Chunk_Data" MadCap:autonumPosition="none">Chunk Data</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Sequencer" MadCap:autonumPosition="none">Sequencer</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Logic_Block" MadCap:autonumPosition="none">Logic Block</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#Logging" MadCap:autonumPosition="none">Logging</a>
+        </p>
+        <p style="margin-left: 40px;margin-top: 0px;margin-bottom: 0px;" MadCap:autonumPosition="none"><a href="#User_Set" MadCap:autonumPosition="none">User Set</a>
+        </p>
+        <MadCap:section MadCap:isCssSelectorParent="False" style="mc-page-layout: url('Resources/PageLayouts/doxygen.flpgl'); mc-page-layout-override: url('Resources/PageLayouts/doxygen.flpgl'); page-break-before: always;" MadCap:PageLayoutBreak="True" MadCap:autonumPosition="none">
+            <h1 MadCap:xrefTargetName="Architecture_of_Spinnaker_API" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Architecture_of_Spinnaker_API" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Architecture of Spinnaker API</h1>
+            <p MadCap:autonumPosition="none">Spinnaker API is built around the GenICam standard, which offers a generic programming interface for various cameras and interfaces. Spinnaker is an extension of GenAPI. Spinnaker provides quick and easy access to your camera.</p>
+            <p MadCap:autonumPosition="none">Spinnaker API includes two major components:</p>
+            <p style="font-weight: bold;" MadCap:autonumPosition="none">Image Acquisition </p>
+            <p MadCap:autonumPosition="none">This is the acquisition engine that is responsible for setting up image buffers and image grabbing. </p>
+            <p style="font-weight: bold;" MadCap:autonumPosition="none">Camera Configuration</p>
+            <p MadCap:autonumPosition="none">This is the configuration engine that is responsible for controlling your camera. This component consists of QuickSpin API, which is a wrapper that makes GenAPI easy to use.</p>
+            <img src="Flowchart.jpg" style="width: 403px;height: 503px;" MadCap:autonumPosition="none" />
+            <h1 MadCap:xrefTargetName="Examples" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Examples" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Examples</h1>
+            <p MadCap:autonumPosition="none">Included with the Spinnaker SDK are a number of source code examples to help you get started. These examples are provided for C, C++, C#, and VB.NET languages and are precompiled for your convenience. </p>
+            <p MadCap:autonumPosition="none">The table below describes the available Spinnaker SDK&#160;examples.</p>
+            <table style="margin-left: 0;margin-right: auto;" MadCap:autonumPosition="none">
+                <col MadCap:autonumPosition="none" />
+                <col MadCap:autonumPosition="none" />
+                <thead MadCap:autonumPosition="none">
+                    <tr MadCap:autonumPosition="none">
+                        <td MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Spinnaker Example</b>
+                        </td>
+                        <td MadCap:autonumPosition="none"><b MadCap:autonumPosition="none">Description</b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody MadCap:autonumPosition="none">
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Acquisition</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Enumerate, start acquisition, and grab images</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">AcquisitionMultipleCamera</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">How to capture images from multiple cameras simultaneously</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">ChunkData</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">How to get chunk data on an image, either from the nodemap or from the image itself</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">DeviceEvents</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Create a handler to access device events</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Enumeration<MadCap:conditionalText MadCap:conditions="Spinnaker.C-Sharp-API,Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">*</MadCap:conditionalText></td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Enumerate interfaces and cameras</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">EnumerationEvents</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Explore arrival and removal events on interfaces and the system</td>
+                    </tr>
+                    <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API,Spinnaker.C-Sharp-API" MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:conditions="" MadCap:autonumPosition="none">Exposure*</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:conditions="" MadCap:autonumPosition="none">Configure a custom exposure time</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">ImageEvents</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Image events shows how to acquire images using the image event handler.</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">ImageFormatControl<MadCap:conditionalText MadCap:conditions="Spinnaker.C-Plus-Plus-API,Spinnaker.C-Sharp-API" MadCap:autonumPosition="none">*</MadCap:conditionalText></td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Configure a custom image size and format</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Logging</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Create a logging event handler</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">LookupTable</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Configure lookup tables for the customization and control of individual pixels</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">NodeMapCallback</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Create, register, use, and unregister callbacks</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">NodeMapInfo</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">How to retrieve node map information</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">SaveToAVI</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Save images in AVI format</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Sequencer<br MadCap:autonumPosition="none" />(Blackfly S&#160;and Oryx only)</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Capture multiple images with different parameters in a sequence</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">SpinSimpleGUI_DirectShow</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Graphical User Interface for evaluating and setting camera parameters using DirectShow</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">SpinSimpleGUI_MFC</td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Graphical User Interface for evaluating and setting camera parameters</td>
+                    </tr>
+                    <tr MadCap:autonumPosition="none">
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Trigger<MadCap:conditionalText MadCap:conditions="Spinnaker.C-Plus-Plus-API,Spinnaker.C-Sharp-API" MadCap:autonumPosition="none">*</MadCap:conditionalText></td>
+                        <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;" MadCap:autonumPosition="none">Trigger shows how to trigger the camera. </td>
+                    </tr>
+                </tbody>
+                <tfoot MadCap:autonumPosition="none">
+                    <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API,Spinnaker.C-Sharp-API" MadCap:autonumPosition="none">
+                        <td colspan="2" style="font-size: 8pt;" MadCap:conditions="" MadCap:autonumPosition="none">*Also available in QuickSpin</td>
+                        <td style="font-size: 8pt;" MadCap:conditions="" MadCap:autonumPosition="none">&#160;</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </MadCap:section>
+        <MadCap:section MadCap:isCssSelectorParent="False" style="mc-page-layout: url('Resources/PageLayouts/doxygen.flpgl'); mc-page-layout-override: url('Resources/PageLayouts/doxygen.flpgl'); page-break-before: always;" MadCap:PageLayoutBreak="True" MadCap:autonumPosition="none">
+            <h1 MadCap:xrefTargetName="Nodes" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Nodes" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Nodes</h1>
+            <p MadCap:autonumPosition="none">Every GenICam compliant camera has an XML description file.
+The XML describes camera features, their interdependencies, and all
+other information like availability, access control, and minimum and maximum values. These features include Gain, Exposure Time, Image Format, and others. The elements of a camera description file are
+represented as software objects called Nodes. A Node map is a list of
+nodes created dynamically at run time.</p>
+            <p MadCap:autonumPosition="none">
+                <img style="width: 461px;height: 253px;" alt="Node Map" src="node-map.png" MadCap:autonumPosition="none" />
+            </p>
+            <p MadCap:autonumPosition="none">To access camera properties such as setting image width:</p>
+            <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+                <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">C++ GenAPI</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">GenApi::INodeMap &amp; <span style="color: #808080;" MadCap:autonumPosition="none">nodeMap</span> = <span style="color: #808080;" MadCap:autonumPosition="none">cam</span>.GetNodeMap();</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF" MadCap:autonumPosition="none">CIntegerPtr</span> width = <span style="color: #808080;" MadCap:autonumPosition="none">nodeMap</span>.GetNode(<span style="color: #A31515" MadCap:autonumPosition="none">"Width"</span>);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">width-&gt;SetValue(new_width_val);</p>
+                    </td>
+                </tr>
+            </table>
+            <h1 MadCap:xrefTargetName="QuickSpin_API_and_Accessing_Camera_Parameters" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="QuickSpin_API_and_Accessing_Camera_Parameters" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>QuickSpin API and Accessing Camera Parameters</h1>
+            <p MadCap:autonumPosition="none">Generic programming with GenICam requires developers to know feature names before using them. Spinnaker
+provides the QuickSpin API, which requires fewer lines of code and allows you to make use of auto completion. The QuickSpin API consists of a list of static functions integrated
+into the Camera class.</p>
+            <p MadCap:autonumPosition="none">All camera parameters can be accessed through the camera pointer object.</p>
+            <p MadCap:autonumPosition="none">
+                <img src="camera-pointer.png" style="width: 339px;height: 191px;" MadCap:autonumPosition="none" />
+            </p>
+            <p MadCap:autonumPosition="none">Most camera parameters (all items in camera.h) can be accessed using the QuickSpin API.</p>
+            <p MadCap:autonumPosition="none">For parameters not handled by QuickSpin API, you can access them via  GenICam API (GenAPI). GenAPI is the generic programming interface for configuring all kinds of cameras. GenAPI is maintained by the European Machine Vision Association.
+</p>
+            <p MadCap:autonumPosition="none">Below is an example comparison of inquiring camera gain via GenAPI and QuickSpin API.</p>
+            <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+                <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">C++ GenAPI</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">Spinnaker::GenApi::<span style="color: #2B91AF;" MadCap:autonumPosition="none">INodeMap</span> &amp; nodeMap = <span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;GetNodeMap();<br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> GainNode = <span style="color: #808080;" MadCap:autonumPosition="none">nodeMap</span>.GetNode("Gain");<br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">Float</span> GainVal = GainNode-&gt;GetValue();</p>
+                    </td>
+                </tr>
+                <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">C++ QuickSpin API</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">float</span> quickGainVal = <span style="color: gray;" MadCap:autonumPosition="none">cam</span>-&gt;Gain.GetValue();</p>
+                    </td>
+                </tr>
+            </table>
+        </MadCap:section>
+        <h1 MadCap:xrefTargetName="C__Graphical_User_Interface_API" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="C__Graphical_User_Interface_API" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>C# Graphical User Interface API</h1>
+        <p MadCap:autonumPosition="none">For applications that want to take advantage of Spinnaker's
+graphical user elements, graphical user interface (GUI) controls are available.
+GUI controls are divided into static and dynamic categories. Static GUI controls
+include the CameraSelectionDialog, display window, and property grid window.
+The GUI dynamically loads the camera's features from the firmware. Therefore,
+new firmware has the ability to add GUI controls to the same application,
+without recompiling.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" colspan="2" MadCap:autonumPosition="none">
+                    <p style="text-align: center;font-weight: bold;color: #008AB0;" MadCap:autonumPosition="none">Static GUI Dialogs</p>
+                </td>
+            </tr>
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//To show image drawing window</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span>  AcquisitionGUI = <span style="color: #0000ff;" MadCap:autonumPosition="none">new</span> <span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span> ();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionGUI.ConnectGUILibrary(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImageDrawingWindow</span>  AcquisitionDrawing = AcquisitionGUI.GetImageDrawingWindow();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionDrawing.Connect(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionDrawing.Start();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionDrawing.ShowModal();</p>
+                </td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p align="center" MadCap:autonumPosition="none">
+                        <img border="0" width="230" height="182" src="drawing-window.jpg" MadCap:autonumPosition="none" />
+                    </p>
+                </td>
+            </tr>
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//To show camera selection window</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span>  AcquisitionGUI = <span style="color: #0000ff;" MadCap:autonumPosition="none">new</span><span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span> ();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionGUI.ConnectGUILibrary(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CameraSelectionWindow</span>  camSelection =
+ AcquisitionGUI.GetCameraSelectionWindow();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">camSelection.ShowModal(true);</p>
+                </td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p align="center" MadCap:autonumPosition="none">
+                        <img border="0" width="275" height="96" src="selection-window.jpg" MadCap:autonumPosition="none" />
+                    </p>
+                </td>
+            </tr>
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//To show property grid window</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span>  AcquisitionGUI = <span style="color: #0000ff;" MadCap:autonumPosition="none">new</span> <span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span> ();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">AcquisitionGUI.ConnectGUILibrary(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">PropertyGridWindow</span>  propWindow =
+ AcquisitionGUI.GetPropertyGridWindow();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">propWindow.Connect(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">propWindow.ShowModal();</p>
+                </td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p align="center" MadCap:autonumPosition="none">
+                        <img border="0" width="210" height="250" src="grid-window.jpg" MadCap:autonumPosition="none" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" colspan="2" MadCap:autonumPosition="none">
+                    <p style="text-align: center;font-weight: bold;color: #008AB0;" MadCap:autonumPosition="none">Dynamic GUI Control</p>
+                </td>
+            </tr>
+            <tr MadCap:autonumPosition="none">
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span>  dynamicGUI = <span style="color: #0000ff;" MadCap:autonumPosition="none">new</span> <span style="color: #2B91AF;" MadCap:autonumPosition="none">GUIFactory</span> ();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">dynamicGUI.ConnectGUILibrary(cam);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Get dialog name via
+ dynamicGUI.GetDialogNameList()</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">Window</span>  dlg =
+ dynamicGUI.GetDialogByName(dialogName);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">dlg.Owner = <span style="color: #2B91AF;" MadCap:autonumPosition="none">Window</span> .GetWindow(<span style="color: #0000ff;" MadCap:autonumPosition="none">this</span> );</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">dlg.Show();</p>
+                </td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p align="center" MadCap:autonumPosition="none">
+                        <img border="0" width="280" height="426" src="dynamic-window.jpg" MadCap:autonumPosition="none" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Camera_XML" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Camera_XML" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Camera XML</h1>
+        <p MadCap:autonumPosition="none">The camera's XML file contains information such as feature naming, register mapping, and dependencies between features. It is typical for GenICam-compliant software to cache the XML file for quicker access to the camera's definition. Spinnaker caches the XML file in a binary format to achieve better performance.</p>
+        <p MadCap:autonumPosition="none">Camera XML files are located in:</p>
+        <p MadCap:autonumPosition="none">C:\ProgramData\Spinnaker\XML</p>
+        <h1 MadCap:xrefTargetName="Recommended_Environment" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Recommended_Environment" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Recommended Environment</h1>
+        <p MadCap:autonumPosition="none">Spinnaker supports the following list of operating systems and development environments.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <col MadCap:autonumPosition="none" />
+            <col MadCap:autonumPosition="none" />
+            <tbody MadCap:autonumPosition="none">
+                <tr MadCap:autonumPosition="none">
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #008ab0;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">OS
+ Compatibility<br MadCap:autonumPosition="none" />(32- and
+ 64-bit)</p>
+                    </td>
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #000000;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">Windows XP <br MadCap:autonumPosition="none" />Windows 7
+<br MadCap:autonumPosition="none" />Windows 8.1
+  <br MadCap:autonumPosition="none" />Windows 10 </p>
+                    </td>
+                </tr>
+                <tr MadCap:autonumPosition="none">
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #008ab0;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">Language
+ Support</p>
+                    </td>
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #000000;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">C
+<br MadCap:autonumPosition="none" />C++
+<br MadCap:autonumPosition="none" />C#
+<br MadCap:autonumPosition="none" />  VB.NET</p>
+                    </td>
+                </tr>
+                <tr MadCap:autonumPosition="none">
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #008ab0;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">Compiler
+ Support</p>
+                    </td>
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #000000;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">Visual Studio 2010
+  <br MadCap:autonumPosition="none" />Visual Studio 2013
+<br MadCap:autonumPosition="none" />  Visual Studio 2015</p>
+                    </td>
+                </tr>
+                <tr MadCap:autonumPosition="none">
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #008ab0;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">Interface
+ Support</p>
+                    </td>
+                    <td style="border: solid white 2.25pt;border-left: none;background: #F2F2F2;padding: 2pt 2pt 2pt 2pt;color: #000000;" MadCap:autonumPosition="none">
+                        <p MadCap:autonumPosition="none">USB3 Vision 1.0</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Instantiate_Cameras" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Instantiate_Cameras" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Instantiate Cameras</h1>
+        <p MadCap:autonumPosition="none">Before you can instantiate a camera, you must create and initialize a system object. The System Singleton object is used to retrieve the list of interfaces (USB&#160;3.1 or GigE) and cameras available. You must call ReleaseInstance() at the end of your program to free up the system object.</p>
+        <p MadCap:autonumPosition="none">Multiple cameras can only be instantiated one at a time.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr style="page-break-inside: avoid;" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Instantiate multiple cameras (C++)</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Retrieve singleton reference to system object</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">SystemPtr</span> system = <span style="color: #2B91AF;" MadCap:autonumPosition="none">System</span>::GetInstance();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">CameraList camList = system-&gt;GetCameras();<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned int</span> numCameras = camList.GetSize();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">for (<span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned int</span> i = 0; i &lt; numCameras; ++i)<br MadCap:autonumPosition="none" />{</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">&#160;&#160;&#160;CameraPtr</span> pCamera = <span style="color: #808080;" MadCap:autonumPosition="none">cameraList</span>.GetByIndex(i);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">&#160;&#160;&#160;pCamera-&gt;Init();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">}</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//&#160;Release&#160;system</span>
+                        <br MadCap:autonumPosition="none" />  system-&gt;ReleaseInstance();</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Enumeration" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Enumeration" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Enumeration</h1>
+        <p MadCap:autonumPosition="none">The snippet below detects the number of cameras connected and enumerates them from an index.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:conditions="" MadCap:xrefTargetName="Spinnaker_C++_GenAPI" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_GenAPI" MadCap:autonumPosition="none"></a>Spinnaker C++ GenAPI</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:conditions="" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">SystemPtr</span> system = <span style="color: #2b91af;" MadCap:autonumPosition="none">System</span>::GetInstance();<br MadCap:autonumPosition="none" /><span style="color: #2b91af;" MadCap:autonumPosition="none">CameraList </span>camList = system-&gt;GetCameras();<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned int</span> numCameras = camList.GetSize();<br MadCap:autonumPosition="none" /><span style="color: #2b91af;" MadCap:autonumPosition="none">CameraPtr </span>pCam = <span style="color: #8a2be2;" MadCap:autonumPosition="none">NULL</span>;<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">for </span>(<span style="color: #0000ff;" MadCap:autonumPosition="none">int </span>i = 0; i &lt; <span style="color: #808080;" MadCap:autonumPosition="none">numCameras</span>; i++)<br MadCap:autonumPosition="none" />{<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;pCam = <span style="color: #808080;" MadCap:autonumPosition="none">camList</span>.GetByIndex(i);<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;&#160;pCam-&gt;Init();<br MadCap:autonumPosition="none" />}</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Asynchronous_Hardware_Triggering" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Asynchronous_Hardware_Triggering" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Asynchronous Hardware Triggering</h1>
+        <p MadCap:autonumPosition="none">The snippet below does the following:</p>
+        <ul MadCap:autonumPosition="none">
+            <li style="margin-left: 40px;" value="1" MadCap:autonumPosition="none">Enables Trigger Mode </li>
+            <li style="margin-left: 40px;" value="2" MadCap:autonumPosition="none">Configures GPIO0/Line0 as the trigger input source</li>
+            <li style="margin-left: 40px;" value="3" MadCap:autonumPosition="none">Specifies the trigger signal polarity as an active high (rising edge) signal</li>
+        </ul>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <col MadCap:autonumPosition="none" />
+            <col MadCap:autonumPosition="none" />
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API" MadCap:autonumPosition="none"></a>Spinnaker C++ QuickSpin API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: gray;" MadCap:autonumPosition="none">Cam</span>-&gt;TriggerMode.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">TriggerModeEnums</span>::<span style="color: darkslategray;" MadCap:autonumPosition="none">TriggerMode_On</span>);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: gray;" MadCap:autonumPosition="none">Cam</span>-&gt;TriggerSource.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">TriggerSourceEnums</span>::<span style="color: darkslategray;" MadCap:autonumPosition="none">TriggerSource_Line0</span>);
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: gray;" MadCap:autonumPosition="none">Cam</span>-&gt;TriggerSelector.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">TriggerSelectorEnums</span>::<span style="color: darkslategray;" MadCap:autonumPosition="none">TriggerSelector_FrameStart</span>);
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: gray;" MadCap:autonumPosition="none">Cam</span>-&gt;TriggerActivation.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">TriggerActivationEnums</span>::<span style="color: darkslategray;" MadCap:autonumPosition="none">TriggerActivation_RisingEdge</span>);
+                    </p>
+                </td>
+            </tr>
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                <td style="border: solid white 6px;background: #F2F2F2;padding: 4px;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> triggerMode =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"TriggerMode"</span>);
+                    <br MadCap:autonumPosition="none" />triggerMode-&gt;SetIntValue(triggerMode-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"On"</span>)-&gt;GetValue());
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> triggerSource =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"TriggerSource"</span>);
+                    <br MadCap:autonumPosition="none" />triggerSource-&gt;SetIntValue(triggerSource-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Line0"</span>)-&gt;GetValue());
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> triggerSelector =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"TriggerSelector"</span>);
+                    <br MadCap:autonumPosition="none" />triggerSelector-&gt;SetIntValue(triggerSelector-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"FrameStart"</span>)-&gt;GetValue());
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> triggerActivation =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"TriggerActivation"</span>);
+                    <br MadCap:autonumPosition="none" />triggerActivation-&gt;SetIntValue(triggerActivation-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"RisingEdge"</span>)-&gt;GetValue());</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_Black_Level" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_Black_Level" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting Black Level</h1>
+        <p MadCap:autonumPosition="none">BlackLevel is the GenICam feature that represents the DC offset that is applied to the video signal. This example compares the mechanism used to set this feature in both environments. </p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API_..1" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API_..1" MadCap:autonumPosition="none"></a>
+                    Spinnaker C++ QuickSpin API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Brightness is called black level in GenICam<br MadCap:autonumPosition="none" /></span><span style="color: #808080;" MadCap:autonumPosition="none">pCam</span>-&gt;BlackLevelSelector.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">BlackLevelSelectorEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">BlackLevelSelector_All</span>);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set the absolute value of brightness to 1.5%.<br MadCap:autonumPosition="none" /></span><span style="color: #808080;" MadCap:autonumPosition="none">pCam</span>-&gt;BlackLevel.SetValue(1.5);</p>
+                </td>
+            </tr>
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> blackLevelSelector = nodeMap.GetNode(<span style="color: #a31515;" MadCap:autonumPosition="none">"BlackLevelSelector"</span>);<br MadCap:autonumPosition="none" />blackLevelSelector-&gt;SetValue(SetIntValue(blackLevelSelector-&gt;GetEntryByName(<span style="color: #a31515;" MadCap:autonumPosition="none">"True"</span>)-&gt;GetValue());</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> blackLevel = nodeMap.GetNode(<span style="color: #a31515;" MadCap:autonumPosition="none">"BlackLevel"</span>);<br MadCap:autonumPosition="none" />blackLevel-&gt;SetValue(1.5);</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_Exposure_Time" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_Exposure_Time" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting Exposure Time</h1>
+        <p MadCap:autonumPosition="none">ExposureTime refers to the amount of time that the camera's electronic shutter stays open. This example sets your camera's exposure/shutter time to 20 milliseconds.  </p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API_..2" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API_..2" MadCap:autonumPosition="none"></a>Spinnaker C++ QuickSpin API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Turn off auto exposure<br MadCap:autonumPosition="none" /></span><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;ExposureAuto.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">ExposureAutoEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">ExposureAuto_Off</span>);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set exposure mode to "Timed"<br MadCap:autonumPosition="none" /></span><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;ExposureMode.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">ExposureModeEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">ExposureMode_Timed</span>);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set absolute value of shutter exposure time to 20000 microseconds<br MadCap:autonumPosition="none" /></span><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;ExposureTime.SetValue(20000);</p>
+                </td>
+            </tr>
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> exposureAuto = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"ExposureAuto"</span>);<br MadCap:autonumPosition="none" />exposureAuto-&gt;SetIntValue(exposureAuto-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Off"</span>)-&gt;GetValue());</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> exposureMode = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"ExposureMode"</span>);<br MadCap:autonumPosition="none" />exposureMode-&gt;SetIntValue(exposureMode-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Timed"</span>)-&gt;GetValue());</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> exposureTime = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"ExposureTime"</span>);<br MadCap:autonumPosition="none" />  exposureTime-&gt;SetValue(20000);</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_Gain" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_Gain" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting Gain</h1>
+        <p MadCap:autonumPosition="none">The following code snippet adjusts gain to 10.5 dB.  </p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API_..3" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API_..3" MadCap:autonumPosition="none"></a>Spinnaker C++ QuickSpin API</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Turn auto gain off</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: gray;" MadCap:autonumPosition="none">cam</span>-&gt;GainAuto.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">GainAutoEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">GainAuto_Off</span>);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set gain to 10.5 dB</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: gray;" MadCap:autonumPosition="none">cam</span>-&gt;Gain.SetValue(10.5);</p>
+                    </td>
+                </tr>
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> gainAuto =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"GainAuto"</span>);<br MadCap:autonumPosition="none" />gainAuto-&gt;SetIntValue(gainAuto-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Off"</span>)-&gt;GetValue());</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> gainValue = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"Gain"</span>);<br MadCap:autonumPosition="none" />gainValue-&gt;SetValue(10.5);</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_Gamma" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_Gamma" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting Gamma</h1>
+        <p MadCap:autonumPosition="none">The following code snippet adjusts gamma to 1.5.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API_..4" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API_..4" MadCap:autonumPosition="none"></a>Spinnaker C++ QuickSpin API</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Set the absolute value of gamma to 1.5</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>.Gamma.SetValue(1.5);</p>
+                    </td>
+                </tr>
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> gamma = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"Gamma"</span>);<br MadCap:autonumPosition="none" />gamma-&gt;SetValue(1.5);</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_White_Balance" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_White_Balance" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting White Balance</h1>
+        <p MadCap:autonumPosition="none">The following code snippet adjusts the white balance's red and blue channels.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #C4F79E;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_QuickSpin_API_..5" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_QuickSpin_API_..5" MadCap:autonumPosition="none"></a>Spinnaker C++ QuickSpin API</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set auto white balance to off</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;BalanceWhiteAuto.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">BalanceWhiteAutoEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">BalanceWhiteAuto_Off</span>);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Select blue channel balance ratio</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;BalanceRatioSelector.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">BalanceRatioSelectorEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">BalanceRatioSelector_Blue</span>);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set the white balance blue channel to 2</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> BalanceRatio =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"BalanceRatio"</span>);<br MadCap:autonumPosition="none" />BalanceRatio-&gt;SetValue(2);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Set the white balance red channel to 2</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;BalanceRatioSelector.SetValue(Spinnaker::<span style="color: #2B91AF;" MadCap:autonumPosition="none">BalanceRatioSelectorEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">BalanceRatioSelector_Red</span>);<br MadCap:autonumPosition="none" />BalanceRatio-&gt;SetValue(2);</p>
+                    </td>
+                </tr>
+                <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #A2DEF3;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ GenAPI</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span> balanceWhiteAuto =
+ nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"BalanceWhiteAuto"</span>);<br MadCap:autonumPosition="none" />balanceWhiteAuto-&gt;SetIntValue(balanceWhiteAuto-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Off"</span>)-&gt;GetValue());</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span>
+  balanceRatioSelector = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"BalanceRatioSelector"</span>);<br MadCap:autonumPosition="none" />balanceRatioSelector-&gt;SetIntValue(balanceRatioSelector-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Blue"</span>)-&gt;GetValue());</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">CFloatPtr</span> balanceRatio = nodeMap.GetNode(<span style="color: #A31515;" MadCap:autonumPosition="none">"BalanceRatio"</span>);<br MadCap:autonumPosition="none" />balanceRatio-&gt;SetValue(2);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">balanceRatioSelector-&gt;SetIntValue(balanceRatioSelector-&gt;GetEntryByName(<span style="color: #A31515;" MadCap:autonumPosition="none">"Red"</span>)-&gt;GetValue());<br MadCap:autonumPosition="none" />balanceRatio-&gt;SetValue(2);</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Accessing_Raw_Bayer_Data" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Accessing_Raw_Bayer_Data" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Accessing Raw Bayer Data</h1>
+        <p MadCap:autonumPosition="none">Raw image data can be accessed programmatically via the getData method of the Spinnaker Image class. In 8 bits per pixel modes such as BayerRG8, the first byte represents the pixel at [row 0, column 0], the second byte at [row 0, column 1], and so on. The top left corner of the image data represents row 0, column 0.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #b3c7e8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="SpinnakerC++_API" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="SpinnakerC++_API" MadCap:autonumPosition="none"></a>Spinnaker<br MadCap:autonumPosition="none" />C++ API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Assuming image is 640 x 480 resolution. The current pixel format as well as PixelColorFilter indicate the Bayer Tile Mapping for the camera. For example, BayerRG8 is RGGB.</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> pResultImage = <span style="color: #808080;" MadCap:autonumPosition="none">cam</span>.GetNextImage();<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">char</span>* data = (<span style="color: #0000ff;" MadCap:autonumPosition="none">char</span>*)pResultImage-&gt;GetData();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Assuming image is 640 x 480
+                        <br MadCap:autonumPosition="none" />// data[0]
+ = Row 0, Column 0 = red pixel (R)<br MadCap:autonumPosition="none" />// data[1] = Row 0, Column 1 = green pixel (G)<br MadCap:autonumPosition="none" />// data[640] = Row 1, Column 0 = green pixel (G)<br MadCap:autonumPosition="none" />// data[641] = Row 1, Column 1 = blue pixel (B)</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Setting_Number_of_Image_Buffers" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Setting_Number_of_Image_Buffers" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Setting Number of Image Buffers</h1>
+        <p MadCap:autonumPosition="none">The following code snippet adjusts the number of image buffers that the driver initializes for buffering images on your PC to 11 (default is 10).</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr valign="center" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:xrefTargetName="Spinnaker_C++_API" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Spinnaker_C++_API" MadCap:autonumPosition="none"></a>Spinnaker C++ API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">Spinnaker::GenApi::<span style="color: #2B91AF;" MadCap:autonumPosition="none">INodeMap</span> &amp; sNodeMap = <span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;GetTLStreamNodeMap();<br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">CIntegerPtr</span> StreamNode =
+ sNodeMap.GetNode(“StreamDefaultBufferCount”);<br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">INT64</span> bufferCount =
+ StreamNode-&gt;GetValue();<br MadCap:autonumPosition="none" />StreamNode-&gt;SetValue(11);</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Event_Handling" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Event_Handling" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Event Handling</h1>
+        <p MadCap:autonumPosition="none">Spinnaker introduces two event classes: interface events and
+device events. </p>
+        <h2 MadCap:autonumPosition="none" MadCap:xrefTargetName="Interface_Event"><a MadCap:generatedBookmark="TOC" name="Interface_Event" MadCap:parentName="Event_Handling"></a>Interface Event</h2>
+        <p MadCap:autonumPosition="none">The interface event class is a new feature that is responsible for
+registering and deregistering user defined interface events such as device
+arrival and removal.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr page-break-inside="avoid" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Interface Event C++</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">class </span><span style="color: #2B91AF;" MadCap:autonumPosition="none">InterfaceEventsHandler</span>  :  <span style="color: #0000ff;" MadCap:autonumPosition="none">public </span><span style="color: #2B91AF;" MadCap:autonumPosition="none">InterfaceEvent</span><br MadCap:autonumPosition="none" />{</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">public</span> :<br MadCap:autonumPosition="none" />InterfaceEventsHandler(){};<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">virtual</span>  ~InterfaceEventsHandler(){};</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">void</span>  OnDeviceArrival()<br MadCap:autonumPosition="none" />{</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 60px;" MadCap:autonumPosition="none">std::cout&lt;&lt; <span style="color: #A31515;" MadCap:autonumPosition="none">"A Camera Arrived"</span>  &lt;&lt; std::endl;</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"> };</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">void</span>  OnDeviceRemoval( <span style="color: #2B91AF;" MadCap:autonumPosition="none">uint64_t</span><span style="color: #808080;" MadCap:autonumPosition="none">deviceSerialNumber</span> )<br MadCap:autonumPosition="none" />{</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 60px;" MadCap:autonumPosition="none"> std::cout&lt;&lt; <span style="color: #A31515;" MadCap:autonumPosition="none">"A Camera was removed with serial number: "</span> &lt;&lt;<br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">deviceSerialNumber</span>  &lt;&lt; std::endl;</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"> };</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">};</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">InterfaceEventsHandler handler;<br MadCap:autonumPosition="none" />cam-&gt;RegisterEvent(handler);</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 MadCap:xrefTargetName="Device_Event" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Device_Event" MadCap:autonumPosition="none" MadCap:parentName="Event_Handling"></a>Device Event</h2>
+        <p MadCap:autonumPosition="none"> The device event class is responsible for registering and
+deregistering user defined device events such as start or end of exposure.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr page-break-inside="avoid" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:conditions="" MadCap:autonumPosition="none">Device Event C++</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:conditions="" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Select the Exposure End event</span>
+                            <br MadCap:autonumPosition="none" />Spinnaker::GenApi:: <span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span>  pEnum =  <span style="color: #808080;" MadCap:autonumPosition="none">nodeMap</span> .GetNode( <span style="color: #A31515;" MadCap:autonumPosition="none">"EventSelector"</span> );<br MadCap:autonumPosition="none" />pEnum-&gt;SetIntValue(pEnum-&gt;GetEntryByName( <span style="color: #A31515;" MadCap:autonumPosition="none">"EventExposureEnd"</span> )-&gt;GetValue());</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Turn on the Event notification for Exposure End Event</span>
+                            <br MadCap:autonumPosition="none" />Spinnaker::GenApi:: <span style="color: #2B91AF;" MadCap:autonumPosition="none">CEnumerationPtr</span>  pBool = <span style="color: #808080;" MadCap:autonumPosition="none">nodeMap</span> .GetNode( <span style="color: #A31515;" MadCap:autonumPosition="none">"EventNotification"</span> );<br MadCap:autonumPosition="none" />pBool-&gt;SetIntValue(1);</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Once Exposure End Event is detected, the OnDeviceEvent function will be called</span>
+                            <br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">class</span><span style="color: #2B91AF;" MadCap:autonumPosition="none">DeviceEventHandler</span>  : <span style="color: #0000ff;" MadCap:autonumPosition="none">public</span><span style="color: #2B91AF;" MadCap:autonumPosition="none">DeviceEvent</span><br MadCap:autonumPosition="none" />{</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">public</span> :<br MadCap:autonumPosition="none" />DeviceEventHandler(){};<br MadCap:autonumPosition="none" />~DeviceEventHandler(){};</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">void</span>  OnDeviceEvent( <span style="color: #2B91AF;" MadCap:autonumPosition="none">Spinnaker::GenICam::gcstring eventName</span><span style="color: #808080;" MadCap:autonumPosition="none">eventId</span> )<br MadCap:autonumPosition="none" />{</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 60px;" MadCap:autonumPosition="none"> std::cout
+ &lt;&lt; <span style="color: #A31515;" MadCap:autonumPosition="none">"Got Device Event with "</span> &lt;&lt; eventName &lt;&lt; <span style="color: #A31515;" MadCap:autonumPosition="none">" and ID="</span>  &lt;&lt; GetDeviceEventId() &lt;&lt; std::endl;</p>
+                        <p style="font-family: Consolas;font-size: 8pt;margin-left: 40px;" MadCap:autonumPosition="none"> }</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">};</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Register event handler</span>
+                            <br MadCap:autonumPosition="none" />DeviceEventHandler allDeviceEventHandler;<br MadCap:autonumPosition="none" />cam-&gt;RegisterEvent(allDeviceEventHandler);</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Grabbing_Images" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Grabbing_Images" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Grabbing Images</h1>
+        <p MadCap:autonumPosition="none">You can grab images using the GetNextImage() function. This function returns an image pointer for the current image. The image pointer should be released whenever you are done with the image. Image pointer, being a smart pointer, is automatically released when set to null or when out of scope. </p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr style="page-break-inside: avoid;" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Image Acquisition
+ (C++)</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Begin acquiring images</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #808080;" MadCap:autonumPosition="none">camBeginAcquisition();&gt;-</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> pResultImage = <span style="color: #808080;" MadCap:autonumPosition="none">cam</span>-&gt;GetNextImage();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">pResultImage-&gt;Release();</p>
+                </td>
+            </tr>
+        </table>
+        <h2 MadCap:autonumPosition="none" MadCap:xrefTargetName="Grab_Result"><a MadCap:generatedBookmark="TOC" name="Grab_Result" MadCap:parentName="Grabbing_Images"></a>Grab Result</h2>
+        <p MadCap:autonumPosition="none">In almost all cases, you should check to see if the grabbed image has any errors. To do so, you need to call getImageStatus().</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr style="page-break-inside: avoid;" MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">To check for errors in the image (C++)</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImageStatus</span> imageStatus = pResultImage-&gt;GetImageStatus();</p>
+                </td>
+            </tr>
+            <tr style="page-break-inside: avoid;" MadCap:conditions="" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Available error enums</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">/** Status of images returned from GetNextImage() call. */</span>
+                    </p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">enum</span> <span style="color: #2B91AF;" MadCap:autonumPosition="none">ImageStatus</span><br MadCap:autonumPosition="none" />{<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_NO_ERROR</span> = 0, <br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image is returned from GetNextImage() call without any errors. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_CRC_CHECK_FAILED</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image failed CRC check. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_INSUFFICIENT_SIZE</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image size is smaller than expected. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_MISSING_PACKETS</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image has missing packets */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_LEADER_BUFFER_SIZE_INCONSISTENT</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image leader is incomplete. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_TRAILER_BUFFER_SIZE_INCONSISTENT</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image trailer is incomplete. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_PACKETID_INCONSISTENT</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image has an inconsistent packet id. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_DATA_INCOMPLETE</span>,<br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image data is incomplete. */</span><br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;<span style="color: #2f4f4f;" MadCap:autonumPosition="none">IMAGE_UNKNOWN_ERROR</span><br MadCap:autonumPosition="none" /><span style="color: #008000;" MadCap:autonumPosition="none">/**&lt; Image has an unknown error. */</span><br MadCap:autonumPosition="none" />};</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Image_Pointer_Class" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Image_Pointer_Class" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Image Pointer Class</h1>
+        <p MadCap:autonumPosition="none">The image pointer (ImagePtr) is a smart pointer that points to the image object. You can have multiple image pointers pointing to the same object. Smart pointers automatically manage the life time of the object that it points to. You can also re-use the same image pointer object. </p>
+        <p MadCap:autonumPosition="none">Image pointer should always be assigned before using.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr style="page-break-inside: avoid;" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Image Pointer Usage</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> pResultImage;</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Retrieve the next received image</span>
+                        <br MadCap:autonumPosition="none" />pResultImage = cam-&gt;GetNextImage();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> duplicateImagePtr = pResultImage;</p>
+                </td>
+            </tr>
+            <tr style="page-break-inside: avoid;" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Image Pointer INCORRECT Usage</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Incorrect usage</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> illegalImage;<br MadCap:autonumPosition="none" />illegalImgae-&gt;Create( ... );</p>
+                </td>
+            </tr>
+            <tr style="page-break-inside: avoid;" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Image Pointer CORRECT Usage</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Correct usage</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> goodImage;<br MadCap:autonumPosition="none" />  goodImage = <span style="color: #2B91AF;" MadCap:autonumPosition="none">Image</span>::Create(...);</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Error_Handling" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Error_Handling" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Error Handling</h1>
+        <p MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">Spinnaker C++ uses a try catch block for exception handling.</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Spinnaker C++ API</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//Assuming Camera&amp; Cam</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">try</span>
+                        <br MadCap:autonumPosition="none" />{</p>
+                    <p style="font-family: Consolas;font-size: 9pt;margin-left: 40px;" MadCap:autonumPosition="none"><span style="color: #808080;" MadCap:autonumPosition="none">cam</span>.Init();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">}<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">catch</span>  (Spinnaker:: <span style="color:#2B91AF;" MadCap:autonumPosition="none">Exception</span>  &amp;e)<br MadCap:autonumPosition="none" />{<br MadCap:autonumPosition="none" /><span style="color:#008000;" MadCap:autonumPosition="none">//Exception handling</span><br MadCap:autonumPosition="none" />}</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Loading_and_Saving_Images" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Loading_and_Saving_Images" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Loading and Saving Images</h1>
+        <p MadCap:autonumPosition="none">Loading and saving a raw image (.raw) from disk into Spinnaker library can be achieved via Image class's smart pointer. </p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr style="page-break-inside: avoid;" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Loading and Saving Images</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">int</span> offlineImageWidth = 1280;<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">int</span> offlineImageHeight = 1024;<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">int</span> offlineOffsetX = 0;<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">int</span> offlineOffsetY = 0;<br MadCap:autonumPosition="none" /><span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned char</span>* offlineData;</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Allocate buffer for image</span>
+                        <br MadCap:autonumPosition="none" />offlineData = (<span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned char</span>*)malloc(<span style="color: #0000ff;" MadCap:autonumPosition="none">sizeof</span>(<span style="color: #0000ff;" MadCap:autonumPosition="none">unsigned char</span>) * offlineImageHeight * offlineImageWidth);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Create empty image</span>
+                        <br MadCap:autonumPosition="none" /><span style="color: #2B91AF;" MadCap:autonumPosition="none">ImagePtr</span> loadImage = <span style="color: #2B91AF;" MadCap:autonumPosition="none">Image</span>::Create(offlineImageWidth, offlineImageHeight, offlineOffsetX, offlineOffsetY, <span style="color: #2B91AF;" MadCap:autonumPosition="none">PixelFormatEnums</span>::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">PixelFormat_BayerRG8</span>, offlineData);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">FILE</span>* inFile;</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Load image from disk into buffer (offlineData)</span>
+                        <br MadCap:autonumPosition="none" />inFile = fopen(filename.str().c_str(), <span style="color: #A31515;" MadCap:autonumPosition="none">"rb"</span>); <br MadCap:autonumPosition="none" />fread(offlineData, 1, offlineImageHeight * offlineImageWidth, inFile);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Convert image to mono8 data format</span>
+                        <br MadCap:autonumPosition="none" />loadImage-&gt;Convert(<span style="color: #2f4f4f;" MadCap:autonumPosition="none">PixelFormat_Mono8</span>);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Save image</span>
+                        <br MadCap:autonumPosition="none" />loadImage-&gt;Save(<span style="color: #A31515;" MadCap:autonumPosition="none">"offline.jpg");</span></p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="Chunk_Data" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Chunk_Data" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Chunk Data</h1>
+        <p MadCap:autonumPosition="none">Chunk data is extra information that the camera can append
+to each image besides image data. Examples of chunk data include frame counter,
+image width, image height and exposure time.</p>
+        <p MadCap:autonumPosition="none">For a listing of chunk data information supported by your camera, please refer to the camera's Technical Reference manual.</p>
+        <p MadCap:autonumPosition="none">An image is comprised of:</p>
+        <ul MadCap:autonumPosition="none">
+            <li value="1" MadCap:autonumPosition="none">Leader</li>
+            <li value="2" MadCap:autonumPosition="none">Image Data</li>
+            <li value="3" MadCap:autonumPosition="none">Chunk Information (i.e., gain, exposure, image size)</li>
+            <li value="4" MadCap:autonumPosition="none">Trailer</li>
+        </ul>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tbody MadCap:autonumPosition="none">
+                <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">C++ Enable Chunk Data</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #808080;" MadCap:autonumPosition="none">Cam</span>-&gt;ChunkSelector<br MadCap:autonumPosition="none" />ChunkSelector.SetValue(<span style="color: #2B91AF;" MadCap:autonumPosition="none">ChunkSelectorEnums</span> ::<span style="color: #2f4f4f;" MadCap:autonumPosition="none">ChunkSelector_ExposureTime</span>)
+  ;</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #808080;" MadCap:autonumPosition="none">Cam</span>-&gt;ChunkEnable.SetValue(<span style="color: #0000ff;" MadCap:autonumPosition="none">true)</span>;</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #808080;" MadCap:autonumPosition="none">Cam</span>-&gt;ChunkModeActive.SetValue(<span style="color: #0000ff;" MadCap:autonumPosition="none">true)</span>;</p>
+                    </td>
+                </tr>
+                <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                    <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">C++ Retrieve Chunk Data</td>
+                    <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">const </span><span style="color: #2B91AF;" MadCap:autonumPosition="none">ChunkData</span>&amp; chunkData = rawImage-&gt;GetChunkData();</p>
+                        <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #2B91AF;" MadCap:autonumPosition="none">float64_t</span> currentExposure = chunkData.GetExposureTime();</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 MadCap:xrefTargetName="Sequencer" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Sequencer" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Sequencer</h1>
+        <p MadCap:autonumPosition="none">The purpose of a sequencer is to allow you to programmatically control the acquisition parameters of an image sequence. You can define not only how the images are captured (i.e. the camera feature settings) but also when the camera transitions from one acquisition setting to another. This is akin to a state machine diagram where the states correspond to the sequencer set feature settings, and the transition among states corresponds to a particular event that triggers the state machine to move from one state to another.</p>
+        <p MadCap:autonumPosition="none">To configure sequencer on your camera, you can use SpinView's sequencer tab. Or, to programmatically configure it, you can use the C++ Sequencer source code example that is installed along with Spinnaker SDK.
+</p>
+        <h1 MadCap:xrefTargetName="Logic_Block" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Logic_Block" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Logic Block</h1>
+        <p MadCap:autonumPosition="none">A Logic Block is a collection of combinatorial logic and latches that allows the user to create new, custom signals inside the camera. Each Logic Block is comprised of 2 lookup tables (LUT) with programmable inputs, truth tables and a flip flop output. There is a LUT for both the D input (Value LUT) and the enable input (Enable LUT) of the flip flop. Both LUTs have 3 inputs and thus have 8 configuration bits for their truth table.</p>
+        <p MadCap:autonumPosition="none">For more information, see <a href="https://www.flir.com/support-center/iis/machine-vision/application-note/using-logic-blocks-with-blackfly-s-and-oryx" MadCap:autonumPosition="none">Using Logic Blocks</a>.</p>
+        <img src="Logic-Block.png" MadCap:autonumPosition="none" />
+        <h1 MadCap:xrefTargetName="Logging" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="Logging" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>Logging</h1>
+        <p MadCap:autonumPosition="none">Spinnaker supports five levels of logging:</p>
+        <ul MadCap:autonumPosition="none">
+            <li value="1" MadCap:autonumPosition="none">Error—failures that are non-recoverable (this is the default level)</li>
+            <li value="2" MadCap:autonumPosition="none">Warning—failures that are recoverable without user intervention</li>
+            <li value="3" MadCap:autonumPosition="none">Notice—information about events such as camera arrival or disconnect, camera initialize, camera start/stop, or modification of a feature</li>
+            <li value="4" MadCap:autonumPosition="none">Info—information about recurring events that are generated with every image</li>
+            <li value="5" MadCap:autonumPosition="none">Debug—information that can be used to troubleshoot the system</li>
+        </ul>
+        <p MadCap:autonumPosition="none">You can define the logging level that you want to monitor. Levels are inclusive, that is, if you monitor debug level error, you also monitor all logging levels above it.
+</p>
+        <p MadCap:autonumPosition="none">For a complete C++ and C# example of Logging, please see Spinnaker SDK source code examples. By default, Spinnaker SDK's SpinView application saves all logging data to:</p>
+        <p MadCap:autonumPosition="none">C:\ProgramData\Spinnaker\Logs</p>
+        <table border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse;border: none;margin-left: 0;margin-right: auto;font-family: Consolas;font-size: 9pt" MadCap:autonumPosition="none">
+            <tr MadCap:conditions="Spinnaker.C-Plus-Plus-API" MadCap:autonumPosition="none">
+                <td align="right" style="border: solid white 6px;background: #B3C7E8;padding: 4px;font-family: Consolas;font-size: 9pt;font-weight: bold;color: #008ab0" MadCap:autonumPosition="none">Register Logging (C++)</td>
+                <td style="border:solid white 6px;padding: 4px;background:#F2F2F2;color: #000000;" MadCap:autonumPosition="none">
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">SystemPtr system =
+ System::GetInstance();</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">//
+ Register logging callback class</span>
+                        <br MadCap:autonumPosition="none" />LogCallback callBackClass;<br MadCap:autonumPosition="none" />system&gt;RegisterLoggingEvent((Spinnaker::LoggingEvent&amp;)callBackClass);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #008000;" MadCap:autonumPosition="none">// Set
+ callback priority level</span>
+                        <br MadCap:autonumPosition="none" />system-&gt;SetLoggingEventPriorityLevel(k_LoggingLevel);</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none"><span style="color: #0000ff;" MadCap:autonumPosition="none">class LogCallback : Spinnaker::LoggingEvent</span>
+                        <br MadCap:autonumPosition="none" />{</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #0000ff;" MadCap:autonumPosition="none">void</span> OnLogEvent(LoggingEventDataPtr
+ loggingEventDataPtr)<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...<br MadCap:autonumPosition="none" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+                    <p style="font-family: Consolas;font-size: 8pt" MadCap:autonumPosition="none">};</p>
+                </td>
+            </tr>
+        </table>
+        <h1 MadCap:xrefTargetName="User_Set" MadCap:autonumPosition="none"><a MadCap:generatedBookmark="TOC" name="User_Set" MadCap:autonumPosition="none" MadCap:parentName="$$toc$$"></a>User Set</h1>
+        <p MadCap:autonumPosition="none">User set is an on camera non-volatile memory space that you can use to store camera properties such as exposure and gain.</p>
+        <p MadCap:autonumPosition="none">To check if user set supports the feature that you want to save, you can either query the User Set Feature Selector programmatically or run SpinView:</p>
+        <img src="User-Set.png" MadCap:autonumPosition="none" />
+    </body>
+</html>

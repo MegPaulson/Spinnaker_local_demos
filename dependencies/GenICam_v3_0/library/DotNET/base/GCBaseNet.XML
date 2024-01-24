@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GCBaseNet</name>
+    </assembly>
+    <members>
+        <member name="T:GenICam_3_0.Base.GenericException">
+            <summary>
+            Base class for all GenICam related exceptions. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.GenericException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>GenericException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+            
+        </member>
+        <member name="M:GenICam_3_0.Base.GenericException.#ctor(System.String)">
+            <summary>
+            Creates <c>GenericException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.GenericException.#ctor">
+            <summary>
+            Creates <c>GenericException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.ArgumentException">
+            <summary>
+            Called when a wrong parameter was given. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.ArgumentException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>ArgumentException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.ArgumentException.#ctor(System.String)">
+            <summary>
+            Creates <c>ArgumentException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.ArgumentException.#ctor">
+            <summary>
+            Creates <c>ArgumentException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.OutOfRangeException">
+            <summary>
+            Exception fired if an argument is out of range. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.OutOfRangeException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>OutOfRangeException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.OutOfRangeException.#ctor(System.String)">
+            <summary>
+            Creates <c>OutOfRangeException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.OutOfRangeException.#ctor">
+            <summary>
+            Creates <c>OutOfRangeException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.PropertyException">
+            <summary>
+            Exception fired if a property access fails. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.PropertyException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>PropertyException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.PropertyException.#ctor(System.String)">
+            <summary>
+            Creates <c>PropertyException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.PropertyException.#ctor">
+            <summary>
+            Creates <c>PropertyException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.RuntimeException">
+            <summary>
+            Exception fired if a runtime error occurred. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.RuntimeException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>RuntimeException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.RuntimeException.#ctor(System.String)">
+            <summary>
+            Creates <c>RuntimeException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.RuntimeException.#ctor">
+            <summary>
+            Creates <c>RuntimeException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.LogicalErrorException">
+            <summary>
+            Exception to be thrown to indicate logical errors in program flow. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.LogicalErrorException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>LogicalErrorException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.LogicalErrorException.#ctor(System.String)">
+            <summary>
+            Creates <c>LogicalErrorException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.LogicalErrorException.#ctor">
+            <summary>
+            Creates <c>LogicalErrorException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.AccessException">
+            <summary>
+            Exception to be thrown to indicate an access error. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.AccessException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>AccessException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.AccessException.#ctor(System.String)">
+            <summary>
+            Creates <c>AccessException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.AccessException.#ctor">
+            <summary>
+            Creates <c>AccessException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.TimeoutException">
+            <summary>
+            Exception to be thrown to indicate an access error. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.TimeoutException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>TimeoutException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.TimeoutException.#ctor(System.String)">
+            <summary>
+            Creates <c>TimeoutException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.TimeoutException.#ctor">
+            <summary>
+            Creates <c>TimeoutException</c>.
+            </summary>
+        </member>
+        <member name="T:GenICam_3_0.Base.DynamicCastException">
+            <summary>
+            Exception to be thrown to indicate the the result of a dynamic cast was 
+            zero. 
+            </summary>
+        </member>
+        <member name="M:GenICam_3_0.Base.DynamicCastException.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            Creates <c>DynamicCastException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+            <param name="fileName">Native filename where the error occurred.</param>
+            <param name="line">Line number of file where the error occurred.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.DynamicCastException.#ctor(System.String)">
+            <summary>
+            Creates <c>DynamicCastException</c>.
+            </summary>
+            <param name="message">Message that describes the error.</param>
+        </member>
+        <member name="M:GenICam_3_0.Base.DynamicCastException.#ctor">
+            <summary>
+            Creates <c>DynamicCastException</c>.
+            </summary>
+        </member>
+    </members>
+</doc>

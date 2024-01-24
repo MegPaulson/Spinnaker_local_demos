@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="864.9999" MadCap:lastWidth="650">
+    <head>
+        <link href="../../Resources/TableStyles/Comparison.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <title>FlyCapture2 Comparison</title>
+        	<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		 
+		  ga('create', 'UA-56143209-1', 'auto');
+		  ga('require', 'displayfeatures');
+		  ga('require', 'linkid', 'linkid.js');
+		  ga('send', 'pageview');
+	</script>
+
+    </head>
+    <body>
+        <h1>FlyCapture2 Feature Comparison with Spinnaker</h1>
+        <p>For programmers not familiar with GenICam API, you can take a look at <a href="https://www.emva.org/standards-technology/genicam/introduction-new/">EMVA's GenICam Standard</a>.</p>
+        <p>Spinnaker re-engineered the way we perceived camera features in FlyCapture2. Camera features and properties are named according to standard feature naming convention (SFNC). The table below compares the Spinnaker SDK features with those in the FlyCapture2 SDK.</p>
+        <p>For example, IIDC register read and write is no longer available. Instead, camera properties are accessed through the GenICam node map.</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <b>FlyCapture2 Features</b>
+                    </td>
+                    <td>
+                        <b>Spinnaker Features</b>
+                    </td>
+                    <td>
+                        <b>Notes</b>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>IIDC register read and write</p>
+                        <p>Source Code Example:<br />AsyncTriggerEx</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>GenICam node map get/set values</p>
+                        <p>Source Code Example:<br />Acquisition</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature is typically used to access camera settings or control the camera's state.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Embedded image info</p>
+                        <p>Source Code Example:<br />MultipleCameraWriteToDiskEx</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Chunk data</p>
+                        <p>Source Code Example:<br />ChunkData</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature allows the camera to add image metadata to the transmission.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>ImageEvents</p>
+                        <p>Source Code Example:<br />ImageEventEx</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>GenICam message or event channel</p>
+                        <p>Source Code Example:<br />DeviceEvents</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature is used to signal the user when certain events such as image arrival has happened.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>FC2Config struct such as grab mode and num_buffer</p>
+                        <p>Source Code Example:<br />RecordingDialog</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Stream Node map</p>
+                        <p>Source Code Example:<br />NodeMapInfo</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature can be used to set buffer mode and the number of buffers.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Error return code</p>
+                        <p>Source Code Example:<br />FlyCapture2Test</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Exceptions</p>
+                        <p>Source Code Example:<br />Acquisition</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">New error handling approach uses exceptions instead of error codes. </td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Format7 packet size to control bandwidth</p>
+                        <p>Source Code Example:<br />GigEGrabEx</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">DeviceLinkLayerThroughputLimit</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature defines the total available bandwidth that can be allocated for the camera.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Imaging mode (i.e., Format7 mode 1)</p>
+                        <p>Source Code Example:<br />CustomImageEx</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Binning controls in GenICam</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature refers to the camera's binning mode where overall resolution is reduced to achieve faster frame rate or brighter image.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Events callback</p>
+                        <p>Source Code Example:<br />BusEventEx_CSharp</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Register event class with overloaded functions</p>
+                        <p>Source Code Example:<br />EnumerationEvents</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">This feature refers to bus event callbacks such as camera arrival and camera removal callback.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>GUID to identify and track cameras</p>
+                        <p>Source Code Example:<br />FlyCapture2Test</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+                        <p>Unique camera class</p>
+                        <p>Source Code Example:<br />Acquisition</p>
+                    </td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">You must use this identifier to access camera features in the SDK.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Terminology Changes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <b>FlyCapture2</b>
+                    </td>
+                    <td>
+                        <b>Spinnaker</b>
+                    </td>
+                    <td>
+                        <b>Notes</b>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Brightness</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Black Level</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the output of the camera when not illuminated</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Exposure</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Exposure and Gain</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the combination of camera's shutter and gain. This is also known as the average intensity of the image.</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Shutter</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Exposure</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the amount of time that the camera's electronic shutter stays open</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Packet Size</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">GevSCPSPacketSize</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to packet size, in bytes, to send on the selected channel for a GVSP transmitter or receiver</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Packet Delay</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">GevSCPD</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the delay to insert between each packet for this stream channel</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Trigger Mode 0</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">TriggerSelector→
+FrameStartAcquisitionMode→Continuous
+</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the mode where camera starts integration of light from external trigger source. Sensor exposure time is controlled by shutter (FlyCap2) or exposure (Spinnaker)</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Trigger Mode 1</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">TriggerSelector→
+ExposureActiveAcquisitionMode→Continuous
+</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Same as Trigger Mode 0 above except sensor exposure time is controlled by external trigger source</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Trigger Mode <i>X</i></td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Logic Block (Blackfly S only)</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to all other trigger modes supported by the camera. Logic Block allows you to define any internal logic, including custom trigger modes.<br />For more information see <a href="https://www.flir.com/support-center/iis/machine-vision/application-note/using-logic-blocks-with-blackfly-s-and-oryx">Using Logic Blocks</a></td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Memory Channel</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">User Set</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to storing camera settings onto non-volatile memory</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">High Dynamic Range (HDR)</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Sequencer (Blackfly S cameras)<br />HDR (USB3 Vision cameras)</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the cycling of frames with different settings (such as gain and exposure) in order to capture the darkest and brightest portions of the image<br />For more information see <a href="https://www.flir.com/support-center/iis/machine-vision/application-note/using-the-sequencer-feature-with-blackfly-s">Using the Sequencer Feature<MadCap:pageBreak /></a></td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Frame Buffer</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Transfer Control</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the transferring of image data to the host</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Video Mode</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Image Format Control</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to controls that define binning/decimation and image size</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Mirror / Flip</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Reverse X / Reverse Y</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the flipping (either horizontally or vertically) of the image sent from the camera</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">One Shot</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Single Frame</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the ability to fire a single hardware or software trigger and have the camera acquire one image</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Multi Shot</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Multi Frame</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refers to the ability to fire a single hardware or software triggers and have the camera acquire a specified number of images</td>
+                </tr>
+                <tr>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Pulse Width Modulation (PWM)</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Counters and Timers (Blackfly S only)</td>
+                    <td style="border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">Refer to a GPIO&#160;pin outputting a specified number of pulses with programmable high an low duration.<br />For more information see <a href="https://www.flir.com/support-center/iis/machine-vision/application-note/using-counter-and-timer-control">Using Counters and Timers</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Differences between Spinnaker and FlyCapture2 Support</h2>
+        <p>The Spinnaker SDK is recommended for users developing new vision applications. Spinnaker provides users with many powerful features to streamline their development process. Users of USB 2.0 and IEE1394 cameras, or users looking for certain GPIO features, may still require FlyCapture2. The following table summarizes the differences between the features, cameras and platforms supported by Spinnaker and FlyCapture2.</p>
+        <table style="width: 100%;border: solid white 2pt;background: #F2F2F2;padding: 4pt 4pt 4pt 4pt;">
+            <col style="width: 15%;" />
+            <col style="width: 30%;" />
+            <col style="width: 20%;" />
+            <col style="width: 20%;" />
+            <thead>
+                <tr>
+                    <th>&#160;</th>
+                    <th>&#160;</th>
+                    <th style="text-align: center;">Spinnaker</th>
+                    <th style="text-align: center;">FlyCapture2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="6"><![CDATA[
+						]]><b>Feature
+						Support</b><![CDATA[
+					]]></td>
+                    <td style="text-align: left;">
+						Feature
+						Search
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						GenICam
+						Compliant
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Dynamic
+						Feature Loading
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Standard
+						Feature 
+						Naming Convention
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Serial
+						on GPIO					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						PWM
+						via GPIO
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td rowspan="8"><![CDATA[
+						]]><b>Camera
+						Support</b><![CDATA[
+					]]></td>
+                    <td style="text-align: left;">
+						Blackfly
+						S
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Oryx
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">USB&#160;3.1 Cameras<br />GS3-U3, BFLY-U3, CM3-U3, FL3-U3
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						GigE Cameras<br />GS3-PGE, BFLY-PGE, FL3-GE
+					</td>
+                    <td style="text-align: center;">
+						Coming Soon
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						USB2.0
+						Cameras
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						IEEE
+						1394 Cameras
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Ladybug (use the Ladybug SDK)					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Bumblebee (use the Triclops SDK)					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                    <td style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr>
+                    <td rowspan="3"><![CDATA[
+						]]><b>Platform
+						Support</b><![CDATA[
+					]]></td>
+                    <td style="text-align: left;">
+						Windows
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						Linux
+  
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">
+						ARM
+					</td>
+                    <td style="text-align: center;">
+						Coming Soon
+					</td>
+                    <td style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="599" MadCap:lastWidth="650">
+    <head>
+        <link href="../../Resources/TableStyles/Comparison.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Benefits of Spinnaker</title>
+    </head>
+    <body>
+        <h1>Benefits of Spinnaker</h1>
+        <p>The Spinnaker SDK is developed based on GenICam. GenICam
+provides a unified application programming interface to users of
+machine vision cameras. An introduction to GenICam can be found on
+<a href="http://www.emva.org/standards-technology/genicam/">EMVA’s website</a>.</p>
+        <p>Some of the key benefits of using the Spinnaker SDK include:</p>
+        <h2>Forward Compatibility</h2>
+        <ul>
+            <li>Features are loaded dynamically from the camera. Take advantage of future camera features without having to recompile your application.
+            </li>
+            <li>New machine vision standards are following GenICam (USB3 Vision,
+GigE Vision). Spinnaker allows you to write more generic code that can be
+easily migrated to future standards.</li>
+            <li class="liSingleEnd">Follows SFNC (standard feature naming convention).</li>
+        </ul>
+        <h2>New Graphical User Interface</h2>
+        <ul>
+            <li class="liSingleEnd">There is a new class of GUI controls that allows you to add
+individual GUI elements to your applications</li>
+        </ul>
+        <h2>Backwards Compatibility</h2>
+        <ul>
+            <li>Source compatibility—Newer versions of Spinnaker will not
+require developers to change their existing code. You can simply
+recompile your application with a newer version of Spinnaker.</li>
+            <li>Functional compatibility—Newer versions of Spinnaker will
+not remove any functional requirements.</li>
+            <li>Binary compatibility—You can run C++ or C based
+applications by swapping new Spinnaker binaries (DLL) with the old
+binaries. (This only applies to Spinnaker binaries which have the same
+major and minor version.)</li>
+        </ul>
+        <MadCap:pageBreak />
+        <h2>Differences between Spinnaker and FlyCapture2 Support</h2>
+        <p>The Spinnaker SDK is recommended for users developing new vision applications. Spinnaker provides users with many powerful features to streamline their development process. Users of USB 2.0 and IEEE1394 cameras, or users looking for certain GPIO features, may still require FlyCapture2. The following table summarizes the differences between the features, cameras and platforms supported by Spinnaker and FlyCapture2.</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/Comparison.css');width: 100%;margin-left: auto;margin-right: auto;" class="TableStyle-Comparison" cellspacing="0">
+            <col class="TableStyle-Comparison-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-Comparison-Column-Column2" style="width: 30%;" />
+            <col class="TableStyle-Comparison-Column-Column2" style="width: 20%;" />
+            <col class="TableStyle-Comparison-Column-Column2" style="width: 20%;" />
+            <thead>
+                <tr class="TableStyle-Comparison-Head-Header1">
+                    <th class="TableStyle-Comparison-HeadE-Column1-Header1">&#160;</th>
+                    <th class="TableStyle-Comparison-HeadF-Column2-Header1">&#160;</th>
+                    <th class="TableStyle-Comparison-HeadF-Column2-Header1" style="text-align: center;">Spinnaker</th>
+                    <th class="TableStyle-Comparison-HeadD-Column2-Header1" style="text-align: center;">FlyCapture2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyE-Column1-Body1" rowspan="6">
+						Feature
+						Support
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Feature
+						Search
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						GenICam
+						Compliant
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Dynamic
+						Feature Loading
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Standard
+						Feature 
+						Naming Convention
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Serial
+						on GPIO					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						PWM
+						via GPIO
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyE-Column1-Body1" rowspan="8">
+						Camera
+						Support
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Blackfly
+						S
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Oryx
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">USB&#160;3.1 Cameras<br />GS3-U3, BFLY-U3, CM3-U3, FL3-U3
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						GigE Cameras<br />GS3-PGE, BFLY-PGE, FL3-GE
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+<![CDATA[					]]></td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						USB 2.0
+						Cameras
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						IEEE
+						1394 Cameras
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Ladybug (use the Ladybug SDK)					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Bumblebee (use the Triclops SDK)					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyE-Column1-Body1" rowspan="4">
+						Platform
+						Support
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Windows
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: left;">
+						Linux
+  
+					</td>
+                    <td class="TableStyle-Comparison-BodyF-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                    <td class="TableStyle-Comparison-BodyD-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyC-Column2-Body1" style="text-align: left;">
+						ARM
+					</td>
+                    <td class="TableStyle-Comparison-BodyC-Column2-Body1" style="text-align: center;">Yes
+<![CDATA[					]]></td>
+                    <td class="TableStyle-Comparison-BodyA-Column2-Body1" style="text-align: center;">
+						Yes
+					</td>
+                </tr>
+                <tr class="TableStyle-Comparison-Body-Body1">
+                    <td class="TableStyle-Comparison-BodyC-Column2-Body1" style="text-align: left;">
+						MacOS
+					</td>
+                    <td class="TableStyle-Comparison-BodyC-Column2-Body1" style="text-align: center;">Yes
+<![CDATA[					]]></td>
+                    <td class="TableStyle-Comparison-BodyA-Column2-Body1" style="text-align: center;">
+						No
+					</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

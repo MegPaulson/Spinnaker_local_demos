@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TLISystemNET</name>
+    </assembly>
+    <members>
+        <member name="T:GenCam.TL.System">
+            <summary>
+            Summary description for Class1.
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.System.STRINGLENGTH">
+            <summary>
+            Standard string length for this class
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.System.#ctor">
+            <summary>
+            Class is not meant to be instantiated.
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.System.RegisterTL(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="vendor">
+            
+            </param><param name="regName">
+            
+            </param><param name="readableName">
+            
+            </param><param name="xmlFile">
+            
+            </param><param name="privateData">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.UnregisterTL(System.String,System.String)">
+            <summary>
+            
+            </summary><param name="vendor">
+            
+            </param><param name="regName">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.GetTL(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            
+            </summary><param name="regName">
+            
+            </param><param name="filePath">
+            
+            </param><param name="readableName">
+            
+            </param><param name="privateData">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.RegisterTLXML(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="TLVendor">
+            
+            </param><param name="TLName">
+            
+            </param><param name="XMLName">
+            
+            </param><param name="description">
+            
+            </param><param name="filePath">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.UnregisterTLXML(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="TLVendor">
+            
+            </param><param name="TLName">
+            
+            </param><param name="XMLName">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.GetTLXML(System.String,System.String@,System.String@)">
+            <summary>
+            
+            </summary><param name="regName">
+            
+            </param><param name="filePath">
+            
+            </param><param name="description">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.RegisterDevXML(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="vendor">
+            
+            </param><param name="model">
+            
+            </param><param name="XMLName">
+            
+            </param><param name="description">
+            
+            </param><param name="filePath">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.RegisterCompatibleDevXML(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="compatibleVendor">
+            
+            </param><param name="compatibleModel">
+            
+            </param><param name="originalVendor">
+            
+            </param><param name="originalModel">
+            
+            </param><param name="XMLName">
+            
+            </param><param name="compatibleDescription">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.UnregisterDevXML(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="vendor">
+            
+            </param><param name="model">
+            
+            </param><param name="XMLName">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.GetDevXML(System.String,System.String@,System.String@)">
+            <summary>
+            
+            </summary><param name="regName">
+            
+            </param><param name="filePath">
+            
+            </param><param name="description">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.AssignXML2Device(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="devVendor">
+            
+            </param><param name="devModel">
+            
+            </param><param name="devID">
+            
+            </param><param name="XMLName">
+            
+            </param><param name="description">
+            
+            </param><param name="filePath">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.UnassignDeviceXML(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary><param name="devVendor">
+            
+            </param><param name="devModel">
+            
+            </param><param name="devID">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="M:GenCam.TL.System.GetAssignedXML4Device(System.String,System.String,System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            
+            </summary><param name="devVendor">
+            
+            </param><param name="devModel">
+            
+            </param><param name="devID">
+            
+            </param><param name="name">
+            
+            </param><param name="description">
+            
+            </param><param name="filePath">
+            
+            </param><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="P:GenCam.TL.System.RegisteredTLList">
+            <summary>
+            Gets the list of registered names of all registered transport layers 
+            (TLs).
+            </summary><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="P:GenCam.TL.System.RegisteredTLXMLList">
+            <summary>
+            Gets the list of registered names of all registered TL XML files.
+            </summary><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="P:GenCam.TL.System.RegisteredDevXMLList">
+            <summary>
+            Gets the list of all registered names of device XML files.
+            </summary><exception cref="T:GenCam.TL.TLException">
+            Thrown if error occured.
+            </exception>
+        </member>
+        <member name="T:GenCam.TL.ErrorID">
+            <summary>
+            Internal error code definitions
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.Success">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.BufferSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.InvalidHandle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.InvalidID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.AccessDenied">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.NoData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.InvalidParameter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.Timeout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.InvalidFilename">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorID.InvalidAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GenCam.TL.ErrorMod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorMod.System">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorMod.TLIClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorMod.TLISystem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorMod.Factory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenCam.TL.ErrorMod.GenAPI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GenCam.TL.TLException">
+            <summary>
+            Base class for all TL exceptions.
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.TLException.#ctor(GenCam.TL.ErrorID)">
+            <summary>
+            Base class constructor.
+            </summary><param name="hResult">
+            Error code for this exception.
+            </param>
+        </member>
+        <member name="M:GenCam.TL.TLException.TLExceptionHandler(System.Int32)">
+            <summary>
+            Throws appropriate exception based on the HRESULT.
+            If HRESULT is 0 no exception is thrown.
+            </summary><param name="hResult">
+            HResult from which the exception is thrown.
+            </param>
+        </member>
+        <member name="M:GenCam.TL.TLException.ToMessage(GenCam.TL.ErrorID)">
+            <summary>
+            Converts given hResult into a string representation.
+            </summary><param name="hResult">
+            HRESULT to be converted.
+            </param><returns>
+            String representation of the given HRESULT.
+            </returns>
+        </member>
+        <member name="T:GenCam.TL.TLSystemException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.TLSystemException.#ctor(GenCam.TL.ErrorID)">
+            <summary>
+            
+            </summary><param name="hResult">
+            
+            </param>
+        </member>
+        <member name="T:GenCam.TL.TLClientException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.TLClientException.#ctor(GenCam.TL.ErrorID)">
+            <summary>
+            
+            </summary><param name="hResult">
+            
+            </param>
+        </member>
+        <member name="T:GenCam.TL.FactoryException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.FactoryException.#ctor(GenCam.TL.ErrorID)">
+            <summary>
+            
+            </summary><param name="hResult">
+            
+            </param>
+        </member>
+        <member name="T:GenCam.TL.GenAPIException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenCam.TL.GenAPIException.#ctor(GenCam.TL.ErrorID)">
+            <summary>
+            
+            </summary><param name="hResult">
+            
+            </param>
+        </member>
+    </members>
+</doc>

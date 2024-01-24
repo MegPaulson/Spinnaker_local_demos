@@ -1,0 +1,20 @@
+//  This file is generated automatically. Do not modify! 
+#define GENICAM_VERSION_MAJOR 3 
+#define GENICAM_VERSION_MINOR 0 
+#define GENICAM_VERSION_SUBMINOR 0
+
+// VS2010
+#ifndef GENICAM_MAIN_COMPILER
+#	if (_MSC_VER == 1600)
+#		define GENICAM_MAIN_COMPILER VC100
+// VS2013
+#	elif (_MSC_VER == 1800)
+#		define GENICAM_MAIN_COMPILER VC120
+// VS2015
+#	elif (_MSC_VER == 1900)
+#		define GENICAM_MAIN_COMPILER VC140
+#	endif 
+#endif // GENICAM_MAIN_COMPILER
+
+/* #undef GENICAM_COMPANY_SUFFIX */
+#define GENICAM_SVN_REVISION 3728

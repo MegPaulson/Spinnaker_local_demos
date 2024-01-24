@@ -1,0 +1,25 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{9C8EC8DD-A881-416A-8457-804687383AD7}") = "Compression", "Compression_vs2015.vcxproj", "{47A7D202-D268-4219-A3BD-97F067045A27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Debug|Win32.Build.0 = Debug|Win32
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Debug|x64.ActiveCfg = Debug|x64
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Debug|x64.Build.0 = Debug|x64
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Release|Win32.ActiveCfg = Release|Win32
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Release|Win32.Build.0 = Release|Win32
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Release|x64.ActiveCfg = Release|x64
+		{47A7D202-D268-4219-A3BD-97F067045A27}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RegisterDescription ModelName="GigEVisionMandatory" VendorName="Generic" ToolTip="Features which MUST be supplied by GigE Vision compliant cameras" StandardNameSpace="GEV" SchemaMajorVersion="1" SchemaMinorVersion="0" SchemaSubMinorVersion="1" MajorVersion="1" MinorVersion="0" SubMinorVersion="1" ProductGuid="CB9328DB-1273-42a3-90C7-EB3224537C39" VersionGuid="321DAFF5-A243-42ae-8B5D-B5BD18C31488" xmlns="http://www.genicam.org/GenApi/Version_1_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.genicam.org/GenApi/Version_1_0
+
+../../GenApi/GenApiSchema_Version_1_0.xsd">
+
+	<Category Name="Root" NameSpace="Standard">
+
+		<ToolTip>Minimum set of features a GigE Vision camera must supply</ToolTip>
+
+		<pFeature>Width</pFeature>
+
+		<pFeature>Height</pFeature>
+
+		<pFeature>PixelFormat</pFeature>
+
+		<pFeature>TotalBytesPerFrame</pFeature>
+
+		<pFeature>AcquisitionMode</pFeature>
+
+		<pFeature>Start</pFeature>
+
+		<pFeature>Stop</pFeature>
+
+	</Category>
+
+	<Group Comment="GigE Vision Mandatory Features">
+
+		<Integer Name="Width" NameSpace="Standard">
+
+			<ToolTip>Width of the image in pixel</ToolTip>
+
+			<Value>1</Value>
+
+			<Min>1</Min>
+
+		</Integer>
+
+		<Integer Name="Height" NameSpace="Standard">
+
+			<ToolTip>Height of the image in pixel</ToolTip>
+
+			<Description>For linescan, this represents the height of the frame created by combining consecutive lines together.</Description>
+
+			<Value>1</Value>
+
+			<Min>1</Min>
+
+		</Integer>
+
+		<Enumeration Name="PixelFormat" NameSpace="Standard">
+
+			<ToolTip>Pixel Format as specified in GigE Vision standard</ToolTip>
+
+			<Description>Refer to the Pixel format section (p. 117)</Description>
+
+			<EnumEntry Name="Mono8" NameSpace="Standard">
+
+				<Value>17301505</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono8Signed" NameSpace="Standard">
+
+				<Value>17301506</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono10" NameSpace="Standard">
+
+				<Value>17825795</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono10Packed" NameSpace="Standard">
+
+				<Value>17563652</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono12" NameSpace="Standard">
+
+				<Value>17825797</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono12Packed" NameSpace="Standard">
+
+				<Value>17563654</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="Mono16" NameSpace="Standard">
+
+				<Value>17825799</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGR8" NameSpace="Standard">
+
+				<Value>17301512</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerRG8" NameSpace="Standard">
+
+				<Value>17301513</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGB8" NameSpace="Standard">
+
+				<Value>17301514</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerBG8" NameSpace="Standard">
+
+				<Value>17301515</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGR10" NameSpace="Standard">
+
+				<Value>17825804</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerRG10" NameSpace="Standard">
+
+				<Value>17825805</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGB10" NameSpace="Standard">
+
+				<Value>17825806</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerBG10" NameSpace="Standard">
+
+				<Value>17825807</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGR12" NameSpace="Standard">
+
+				<Value>17825808</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerRG12" NameSpace="Standard">
+
+				<Value>17825809</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerGB12" NameSpace="Standard">
+
+				<Value>17825810</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BayerBG12" NameSpace="Standard">
+
+				<Value>17825811</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB8Packed" NameSpace="Standard">
+
+				<Value>35127316</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BGR8Packed" NameSpace="Standard">
+
+				<Value>35127317</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGBA8Packed" NameSpace="Standard">
+
+				<Value>35651606</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BGRA8Packed" NameSpace="Standard">
+
+				<Value>35651607</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB10Packed" NameSpace="Standard">
+
+				<Value>36700184</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BGR10Packed" NameSpace="Standard">
+
+				<Value>36700185</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB12Packed" NameSpace="Standard">
+
+				<Value>36700186</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="BGR12Packed" NameSpace="Standard">
+
+				<Value>36700187</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB10V1Packed" NameSpace="Standard">
+
+				<Value>35651612</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB10V2Packed" NameSpace="Standard">
+
+				<Value>35651613</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="YUV411Packed" NameSpace="Standard">
+
+				<Value>34340894</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="YUV422Packed" NameSpace="Standard">
+
+				<Value>34603039</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="YUV444Packed" NameSpace="Standard">
+
+				<Value>35127328</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB8Plannar" NameSpace="Standard">
+
+				<Value>35127329</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB10Plannar" NameSpace="Standard">
+
+				<Value>36700194</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB12Plannar" NameSpace="Standard">
+
+				<Value>36700195</Value>
+
+			</EnumEntry>
+
+			<EnumEntry Name="RGB16Plannar" NameSpace="Standard">
+
+				<Value>36700196</Value>
+
+			</EnumEntry>
+
+			<Value>17301505</Value>
+
+		</Enumeration>
+
+		<Integer Name="TotalBytesPerFrame" NameSpace="Standard">
+
+			<ToolTip>Size of the largest buffer possible for current mode of operation</ToolTip>
+
+			<Description>Number of bytes transferred for each image on the stream channel, including any end-of-line, end-offrame statistics or other stamp data. This is the total size of data payload for a block. UDP and GVSP headers are not considered. Data leader and data trailer are not included. This is mainly used by the application software to determine size of image buffers to allocate (largest buffer possible for current mode of operation). For example, an image with no statistics or stamp data as TotalBytesPerFrame equal to (width x height x pixelSize) in bytes. It is strongly recommended to retrieve TotalBytesPerFrame from the camera instead of relying on the above formula.</Description>
+
+			<Value>1</Value>
+
+			<Min>1</Min>
+
+		</Integer>
+
+		<Enumeration Name="AcquisitionMode" NameSpace="Standard">
+
+			<ToolTip>Use by application software to set the mode of acquisition</ToolTip>
+
+			<Description>Used by application software to set the mode of acquisition. This feature indicates how image are sequenced out of the camera (continuously, single shot, multi-shot, …)</Description>
+
+			<EnumEntry Name="Continuous" NameSpace="Standard">
+
+				<ToolTip>Acquires an infinite sequence of images</ToolTip>
+
+				<Description>Configures the camera to start an infinite sequence of image acquisition with the Start command that must be stopped explicitly by the application with the Stop command.</Description>
+
+				<Value>1</Value>
+
+			</EnumEntry>
+
+			<Value>0</Value>
+
+		</Enumeration>
+
+		<Command Name="Start" NameSpace="Standard">
+
+			<ToolTip>Start image acquisition using the specified acquisition mode.</ToolTip>
+
+			<Value>0</Value>
+
+			<CommandValue>1</CommandValue>
+
+		</Command>
+
+		<Command Name="Stop" NameSpace="Standard">
+
+			<ToolTip>Stop image acquisition using the specified acquisition mode.</ToolTip>
+
+			<Value>0</Value>
+
+			<CommandValue>0</CommandValue>
+
+		</Command>
+
+	</Group>
+
+</RegisterDescription>
+
