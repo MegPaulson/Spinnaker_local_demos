@@ -1,0 +1,283 @@
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter
+from PIL import Image, ImageDraw
+import cv2
+
+def magnitude_spectrum(image, image_height, threshold=0.2,):
+    #gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    gray_image = image
+
+    row_index = image_height//2 
+
+    intensity = gray_image[row_index, :]
+
+    #intensity = intensity - np.mean(intensity)
+
+    # Windowing function
+    #window = intensity * np.kaiser(len(intensity), 14)
+        
+
+    # Compute fourier transform
+    f_transform = np.fft.fft(intensity)
+
+    #f_transform_shifted = np.fft.fftshift(f_transform)
+
+    magnitude_spectrum = (np.abs(f_transform)//len(intensity))
+    
+    
+    # Find only the second highest bin magnitude- the zero frequency will stay dominant in a square wave, so exclude it
+    max_amp = np.partition(magnitude_spectrum, -2)[-2]
+
+    # Normalize to range [0, 1]
+    magnitude_spectrum /= np.max(magnitude_spectrum)
+
+    bins_above_threshold = np.sum(magnitude_spectrum > threshold)
+
+    return magnitude_spectrum
+
+
+def gaussian_curve(x, sigma):
+    return np.exp(-x**2 / (2 * sigma**2)) / (sigma * np.sqrt(2 * np.pi))
+
+# Generate x values
+x_values = np.linspace(-10, 10, 1000)
+
+# Different sigma values
+root = np.sqrt(2)
+sigma_values = [ 1, root, root**2, root**3, root**4 ]
+
+# Plot Gaussian curves for each sigma
+for sigma in sigma_values:
+    y_values = gaussian_curve(x_values, sigma)
+    plt.plot(x_values, y_values, label=f'Sigma = {sigma}')
+
+# Add labels and legend
+plt.title('Gaussian Curve at Different Sigma Values')
+plt.xlabel('x')
+plt.ylabel('Gaussian Value')
+plt.legend()
+
+# Show the plot
+plt.show()
+
+def plot_mtf(iterations, mtf, bar_size):
+
+    plt.plot(range(iterations), mtf, marker='o', label='MTF')
+
+    plt.xlabel('Iteration')
+    plt.ylabel('MTF')
+    plt.title(f"MTF over Blur Iterations (bar size={bar_size})")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+def progressive_blur(image, iterations):
+    #blur radius is increased after every iteration
+    sigma = np.sqrt(2) ** iterations
+    print(sigma)
+    blurred_image = gaussian_filter(image, sigma=sigma)
+    return blurred_image
+
+def calculate_intensity_difference(image, bar_width):
+
+    center_row_index = image.shape[0] // 2
+    excluded_pixels = bar_width
+    #sampled_pixels = image[:, excluded_pixels:-excluded_pixels]
+    #sampled_pixels = image[center_row_index, excluded_pixels:-excluded_pixels]
+    sampled_pixels = image[center_row_index,:]
+    # Calculate the difference between maximum and minimum intensity values
+    return np.max(sampled_pixels) - np.min(sampled_pixels)
+
+def generate_image(width, height, bar_thickness):
+
+    image = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(image)
+
+    # Define the colors for black and white bars
+    colors = ["black", "white"]
+
+    # Draw vertical bars with equal spacing
+    for x in range(0, width, bar_thickness):
+        draw.rectangle([x, 0, min(x + bar_thickness, width), height], fill=colors[x // bar_thickness % 2])
+
+    # Save the generated image
+    #cv2.imwrite( "C:/Acquisition_Data/Acquisition_images/black_white_bars.png", np.array(image))
+    return np.array(image)
+
+if __name__ == "__main__":
+    width = 50
+    height = 50
+    bar_thickness = 8
+
+
+    image = generate_image(width, height, bar_thickness)
+    # cv2.imshow("Initial Image", image)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+
+    # blur_im = progressive_blur(image, 1)
+    # cv2.imshow("Blur Image", blur_im)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+
+    if 0:
+        radius = 0
+        mtf = []
+        iterations = 0
+        first_im = image.copy()
+        current_bar_width = bar_thickness
+
+        while True:
+            # Display the blurred image
+
+            if iterations == 0:
+                blurred_image = first_im
+
+            cv2.imshow("Blurred Image", blurred_image)
+            cv2.waitKey(100)
+
+            difference = calculate_intensity_difference(blurred_image, current_bar_width)
+
+            mtf_value = difference/255
+
+            #print(mtf_value)
+            mtf.append(mtf_value)
+
+            if mtf_value == 0:
+                iterations += 1
+                break
+            else:
+                iterations += 1
+                #radius = iterations
+
+                #print(radius)
+                first_im = image.copy()
+                blurred_image = progressive_blur(first_im, iterations)
+                #blurred_image = gaussian_blur(first_im, iterations)
+
+        # for i in range(current_bar_width + 20):
+        #     print("radius:", i, " MTF:", mtf[i])    
+        print("total iterations:", iterations)
+        plot_mtf(iterations, mtf, current_bar_width)
+
+    if 0:
+        mtf = []
+        width_increase_iterations = []
+        freq = [] #cycles per window
+        #kernel_size = (3,3)
+        radius = 0
+        current_image= image.copy()
+        iterations = 0
+        current_bar_width = bar_thickness
+        while current_bar_width < 30:
+            
+            if iterations == 0:
+                blurred_image = current_image
+           
+
+            # Calculate intensity difference
+            difference = calculate_intensity_difference(blurred_image, current_bar_width)
+
+            mtf_value = difference/255
+
+            # if iterations != 0:
+            #     mtf_value = mtf_value/(iterations*2)
+            mtf.append(mtf_value)
+            #print("mtf:", difference/255, "bar width: ", current_bar_width, "i:", iterations)
+
+            # Display the blurred image
+            cv2.imshow("Blurred Image", blurred_image)
+            cv2.waitKey(100)  # Adjust the delay as needed
+
+            #freq.append(image_width/(current_bar_width*2 ))
+
+            if iterations == (current_bar_width): #mtf_value < 0.05: 
+                #print("mtf <", 0.1*current_bar_width, " reached")
+                # Increase bar thickness by 2
+                current_bar_width *= 2
+                print("bar width:", current_bar_width, "i:", iterations, "mtf:", mtf_value)
+
+                # Save the iteration where the bar thickness gets increased
+                width_increase_iterations.append(iterations)
+
+                iterations += 1
+
+                # Generate a new initial image with the increased bar thickness, and same level of blur as previous image
+                current_image = generate_image(width, height, current_bar_width)
+                blurred_image = progressive_blur(current_image, iterations)
+                #blurred_image = gaussian_blur(current_image, iterations)
+                
+
+            else:
+                iterations += 1 
+                #print(iterations)
+
+                # Apply Gaussian blur
+                blurred_image = progressive_blur(current_image, iterations)
+                #blurred_image = gaussian_blur(current_image, iterations)
+            
+
+
+        print(f"Total iterations: {iterations}")
+        #print(width_increase_iterations)
+        
+        plt.plot(range(iterations), mtf, marker='o', label='MTF')
+        ax = plt.gca()
+        # Set the y-axis limit to start from zero
+        ax.set_ylim(0)
+
+        # Mark each iteration where a width increase occurred with a vertical dotted red line
+        for inc in width_increase_iterations:
+            plt.axvline(x=inc, color='red', linestyle='--', linewidth=0.8)
+        # for i in range(len(width_increase_iterations)):
+        #     currwidth = str(bar_thickness*(i+1))
+        #     plt.text(width_increase_iterations[i], 0.5, f'{currwidth}', ha='left', va='bottom', color='red')
+            
+
+        
+
+        plt.xlabel('Iterations')
+        plt.ylabel('MTF')
+        plt.title(f'MTF over Blur Iterations (bar size={bar_thickness})')
+        plt.legend()
+        plt.grid(True)
+        plt.show()
+
+    if 1:
+        #magnitude_spectrum(image)
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        gray_image = progressive_blur(gray_image, 6)
+        cv2.imshow("Initial Image", gray_image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        row_index = height//2 
+        intensity = gray_image[row_index, :]
+        #plt.plot(range(iterations + 1), bins_above_threshold_values, label='bins above threshold')
+        spectrum, freqs = plt.mlab.magnitude_spectrum(intensity)
+        #print(freqs)
+        spectrum = spectrum**2
+        dc = np.max(spectrum)
+     
+        spectrum /= dc
+
+        b = len(spectrum)
+        for i in range(b):
+            f = freqs[i]
+            m = spectrum[i]
+
+            print("freq:", f, "magnitude:", m)
+
+
+        #plt.plot(freqs, spectrum)
+        plt.bar(freqs, spectrum, width=0.01)
+        plt.show()
+
+        # plt.magnitude_spectrum(intensity, Fs=100)
+        # plt.title("Magnitude Spectrum of Signal") 
+        # plt.show()
