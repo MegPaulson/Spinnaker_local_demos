@@ -1,0 +1,99 @@
+import cv2
+import numpy as np
+
+
+def read_image(image_path):
+    # Read the image
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    # Threshold the image to convert to binary (assuming it's a black-and-white pattern)
+    _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+    # Convert binary image to a list of lists
+    pixel_values = binary_image.tolist()
+    return pixel_values
+
+def process_images(image_paths):
+    pixel_values_x = []
+    for path in image_paths:
+        pixel_values_x.append(read_image(path))
+    return pixel_values_x
+
+# Example image paths for 3 patterns
+image_paths = ["pattern1.jpg", "pattern2.jpg", "pattern3.jpg"]
+
+# Process images and populate the array with pixel values
+pixel_values_x = process_images(image_paths)
+
+# Display pixel values
+for i, pattern in enumerate(pixel_values_x):
+    print(f"Pattern {i+1} Pixel Values for X Coordinate:")
+    for row in pattern:
+        print(row)
+    print()
+
+def pixel_value_to_gray_code(pixel_values):
+    gray_code_sequence = []
+    current_gray_code = 0
+    for value in pixel_values:
+        if value == 1:
+            current_gray_code ^= 1
+        gray_code_sequence.append(current_gray_code)
+    return gray_code_sequence
+
+def gray_to_binary(gray_code):
+    binary_code = [gray_code[0]]
+    for i in range(1, len(gray_code)):
+        binary_code.append(gray_code[i] ^ gray_code[i-1])
+    return binary_code
+
+def binary_to_decimal(binary_code):
+    decimal_value = 0
+    for bit in binary_code:
+        decimal_value = (decimal_value << 1) | bit
+    return decimal_value
+
+# Example pixel values for 3 patterns
+pixel_values_x = [[[1, 0, 1], [0, 1, 0]],  # Pattern 1 for x coordinate
+                  [[0, 0, 1], [1, 1, 0]],  # Pattern 2 for x coordinate
+                  [[1, 1, 1], [0, 0, 0]]]  # Pattern 3 for x coordinate
+
+pixel_values_y = [[[0, 1, 1], [1, 0, 0]],  # Pattern 1 for y coordinate
+                  [[1, 0, 0], [0, 1, 1]],  # Pattern 2 for y coordinate
+                  [[0, 1, 0], [1, 0, 1]]]  # Pattern 3 for y coordinate
+
+# Convert pixel values to gray code sequences for x coordinates
+x_gray_codes = []
+for pattern in pixel_values_x:
+    gray_codes_pattern = []
+    for pixel_row in pattern:
+        for pixel in pixel_row:
+            gray_codes_pattern.append(pixel_value_to_gray_code(pixel))
+    x_gray_codes.append(gray_codes_pattern)
+
+# Convert pixel values to gray code sequences for y coordinates
+y_gray_codes = []
+for pattern in pixel_values_y:
+    gray_codes_pattern = []
+    for pixel_row in pattern:
+        for pixel in pixel_row:
+            gray_codes_pattern.append(pixel_value_to_gray_code(pixel))
+    y_gray_codes.append(gray_codes_pattern)
+
+# Convert gray code sequences to decimal values
+x_coordinates = []
+for pattern in x_gray_codes:
+    decimal_values = [binary_to_decimal(gray_to_binary(gray_code)) for gray_code in pattern]
+    x_coordinates.append(np.array(decimal_values))
+
+y_coordinates = []
+for pattern in y_gray_codes:
+    decimal_values = [binary_to_decimal(gray_to_binary(gray_code)) for gray_code in pattern]
+    y_coordinates.append(np.array(decimal_values))
+
+# Display coordinates
+for i in range(len(x_coordinates)):
+    print(f"Pattern {i+1} Coordinates:")
+    print("X Coordinates:")
+    print(x_coordinates[i])
+    print("Y Coordinates:")
+    print(y_coordinates[i])
+    print()
