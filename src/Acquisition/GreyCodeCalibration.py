@@ -67,7 +67,7 @@ def create_ImageData_instance(source):
                 # Extract information from the filename for sorting
                 cam_number = int(parts[1])
                 pattern_type = parts[3]
-                pattern_number = parts[4].split(".")[0]  # Remove the file extension
+                pattern_number = parts[4].split(".")[0]  # Remove the file extension from end
                 
                 # Create an instance of ImageData for the current camera if it doesn't exist
                 if cam_number not in image_data_instances:
@@ -101,11 +101,13 @@ def to_graycode(pixel_values):
 
 # Convert gray code to binary- perform XOR starting with msb and next item
 def to_binary(gray_code): 
+    # must reverse gray code to get msb first (since images are captured from lsb to msb) 
     gray_code = gray_code[::-1]
+    # msb of gray code and binary are the same
     bin = [gray_code[0]]
 
     for i in range(1, len(gray_code)):
-         bin.append(gray_code[i] ^ bin[i-1])
+         bin.append(gray_code[i] ^ bin[i-1]) # XOR to convert
     
     return bin
 
@@ -113,6 +115,8 @@ def to_binary(gray_code):
 def to_decimal(binary_code):
     decimal_val = 0
     for i, bit in enumerate(reversed(binary_code)): # Want smallest bit first- enumerate(reversed(binary_code))
+        # perform a left bitshift by the same value as the index of the bit
+        # equivalent to multiplying by place value
         decimal_val += (bit << i)
 
     return decimal_val
@@ -179,9 +183,6 @@ def get_center_element(matrix):
 
 def visualize_matrix(coordinate_matrix, horizontal_res, vertical_res):
     
-    
-    
-
     image = np.zeros((len(coordinate_matrix), len(coordinate_matrix[0]), 3), dtype = np.uint8)
     # Access each coordinate pair
     for i, row in enumerate(coordinate_matrix):
@@ -245,122 +246,129 @@ def generate_crosshair_pattern(image_dimensions, output_directory, center_elemen
 
     img.save(os.path.join(output_directory, filename))
 
-def calculate_average_pixelwidth():
-    # Want to measure center-to-center distance between pixels in order to establish global scale for metric...
-    # each "blob" that represents a projector pixel should have the same x and y coordinates within camera matrix
-    # binarize based on unique coordinates to distinguish blobs
-    # Find centroid of each whole blob, then distance in camera pixels between them
-    pass
+def calculate_average_pixelwidth(coordinate_matrix):
+    # Want to measure center-to-center distance between pixels in order to establish global scale for focus metric...
+    # each "blob" that represents a projector pixel should have the same x/y coordinates within camera matrix
+    
+    # binarize the matrix based on "blobs" of unique coordinate
+    binary_matrix = binarize_matrix(coordinate_matrix)
+    # Find centroid of each whole blob- not touching the edge of image
+    black_centroids, white_centroids = calculate_centroid(binary_matrix)
+    # find distance between centroids of projector pixels in units of camera pixels
+    pixel_width = calculate_average_distance(black_centroids, white_centroids)
 
-def find_longest_sequence(matrix):
-    m = len(matrix)
-    n = len(matrix[0])
-    max_length = 0  # Storing the longest sequence of identical coordinate pairs
+    return pixel_width
 
-    # Check horizontally and vertically
-    for i in range(m):
-        for j in range(n):
-            current_length = 1
-            for k in range(j + 1, n):
-                if matrix[i][k] == matrix[i][j]:
-                    current_length += 1
-                    max_length = max(max_length, current_length)
-                else:
-                    break
 
-            current_length = 1
-            for k in range(i + 1, m):
-                if matrix[k][j] == matrix[i][j]:
-                    current_length += 1
-                    max_length = max(max_length, current_length)
-                else:
-                    break
-
-    return max_length
-
-# Isolate blobs from coordinate matrix
+# Isolate projector pixels from coordinate matrix 
 def binarize_matrix(matrix):
-    #print(matrix)
+    # Find all unique coordinate pairs in the matrix- pairs are sorted in ascending order in x, then y
     unique_values = sorted(set(tuple(pair) for row in matrix for pair in row), key=lambda x: (x[0], x[1]))
     temp_mat = np.zeros_like(matrix, dtype=int)
     matrix = np.reshape(matrix, temp_mat.shape)
+
+    # initialize binary matrix with 1 less dimension than coordinate matrix (0th and 1st axis instead of 0th,1st,2nd)- all pairs are converted to 1 or 0 later
     binary_matrix = np.zeros((matrix.shape[0], matrix.shape[1]), dtype=int)
     
     #print(matrix)
     print("unique:",unique_values)
     # print(binary_matrix)
     # print(binary_matrix.shape)
-    indices = None
 
     i = 1
     for val in unique_values:
-        # Find indices where the value occurs
-        print(val)
+        #print(val)
+        # Find all indices in matrix where the unique coordinate value occurs
+        # we are only searching the 2nd axis- if the matrix element matches the unique coordinate value, np.all returns true
+        # np.where returns the 0th and 1st dimension indices where we find a match
         indices = np.where(np.all(matrix == val, axis=(2)))
+
+        # Populate all elements of the binary matrix that have a "match" for a given coordinate value
+        # Creates a checkerboard pattern where each square represents a projected pixel
         binary_matrix[indices] = i%2
         i+=1
     return binary_matrix
 
-def locate_centroid(binary_matrix):
-    im = cv2.imread(r"C:\Acquisition_Data\upsampled_testImages\Cam_2_pattern_x_3.png")
+# Find the centroids of all black and white blobs from binarized matrix
+def calculate_centroid(binary_matrix):
+    #im = cv2.imread(r"C:\Acquisition_Data\upsampled_testImages\Cam_2_pattern_x_3.png")
+
     wcentroids = []
     bcentroids = []
     binary_matrix = np.array(binary_matrix, dtype=np.uint8)
-    #contours,hierarchy = cv2.findContours(binary_matrix, 1, 2)
 
+    # Find the contours of the black and white blobs (inversion is necessary to collect both since white is seen as "foreground" by cv2.findcontours)
     bcontours, _ = cv2.findContours((binary_matrix == 1).astype(np.uint8), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     wcontours, _ = cv2.findContours((binary_matrix == 0).astype(np.uint8), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    for wcnt in wcontours:
-        rect = cv2.minAreaRect(wcnt)
-        box = cv2.boxPoints(rect)
-        box = np.intp(box)
-        cv2.drawContours(im,[box],0,(0,0,255),1)
-    for bcnt in bcontours:
-        rect = cv2.minAreaRect(bcnt)
-        box = cv2.boxPoints(rect)
-        box = np.intp(box)
-        cv2.drawContours(im,[box],0,(0,255,0),1)
-    cv2.imwrite(r"C:\Acquisition_Data\upsampled_testImages\Cam_2_pattern_x_3CNT.png", im)
-    cv2.imshow('img',im)
-    cv2.waitKey(0)  
 
+    # for wcnt in wcontours:
+    #     rect = cv2.minAreaRect(wcnt)
+    #     box = cv2.boxPoints(rect)
+    #     box = np.intp(box)
+    #     cv2.drawContours(im,[box],0,(0,0,255),1)
+
+    # for bcnt in bcontours:
+    #     rect = cv2.minAreaRect(bcnt)
+    #     box = cv2.boxPoints(rect)
+    #     box = np.intp(box)
+    #     cv2.drawContours(im,[box],0,(0,255,0),1)
+
+    # cv2.imwrite(r"C:\Acquisition_Data\upsampled_testImages\Cam_2_pattern_x_3CNT.png", im)
+    # cv2.imshow('img',im)
+    # cv2.waitKey(0)  
+
+    # Find the centroid of white squares
     for c in wcontours:
         M = cv2.moments(c)
-        cx = int(M['m10']/M['m00'] + 1e-5)
-        cy = int(M['m01']/M['m00'] + 1e-5)
-        wcentroids.append((cx,cy))
+        if M['m00'] != 0:
+            cx = int(M['m10']/M['m00'])
+            cy = int(M['m01']/M['m00'])
+            wcentroids.append((cx,cy))
+
+    # Find the centroid of black squares
     for c in bcontours:
         M = cv2.moments(c)
-        cx = int(M['m10']/M['m00'] + 1e-5)
-        cy = int(M['m01']/M['m00'] + 1e-5)
-        bcentroids.append((cx,cy))
+        if M['m00'] != 0:
+            cx = int(M['m10']/M['m00'])
+            cy = int(M['m01']/M['m00'])
+            bcentroids.append((cx,cy))
+    
     return [wcentroids, bcentroids]
 
-def calculate_distances(centroids):
-    distances = []
-    #centerpoints = centerpoints[:-3]
-    for i in range(len(centroids) - 1):
-        # Calculate the Euclidean distance between centers of adjacent centroids
-        distance = np.sqrt((centroids[i][0] - centroids[i+1][0]) ** 2 + (centroids[i][1] - centroids[i+1][1]) ** 2)
-        distances.append(distance)
-    return (distances)
 
+from scipy.spatial import distance
+def calculate_average_distance(centroids1, centroids2):
+    distances = []
+    for centroid1 in centroids1:
+        min_dist = float('inf')
+        for centroid2 in centroids2:
+            # Only proceed if the centroids are not the same.. or else we get a dist of 0
+            #-> caused by the border of matrix being recognized as both a black and white contour- fix!
+            if centroid1 != centroid2:
+                dist = distance.euclidean(centroid1, centroid2)
+                # collect only the minimum distance between two centroids- this will be the distance between adjacent pixel centers
+                if dist < min_dist:
+                    min_dist = dist
+                    #print(min_dist)
+        distances.append(min_dist)
+    # Find the average of all minimum distances
+    avg = sum(distances) / len(distances)
+    return avg
+
+# unused function- for testing
 def upsample_images(input_folder, output_folder):
-    # Create the output folder if it doesn't exist
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # Loop through all files in the input folder
     for filename in os.listdir(input_folder):
-        if filename.endswith(('.png', '.jpg', '.jpeg')):  # Adjust the extensions as needed
+        if filename.endswith(('.png', '.jpg', '.jpeg')): 
             # Read the image
             img_path = os.path.join(input_folder, filename)
             img = cv2.imread(img_path)
 
             # Upsample the image
-            img_upsampled = cv2.resize(img, ((img.shape[1]*3), (img.shape[0]*3)))
+            img_upsampled = cv2.resize(img, ((img.shape[1]*4), (img.shape[0]*4)))
 
-            # Write the upsampled image to the output folder
             output_path = os.path.join(output_folder, filename)
             cv2.imwrite(output_path, img_upsampled)
 
@@ -428,11 +436,14 @@ if __name__ == "__main__":
             matrix = item.create_coordinate_matrix()
             center_elements.append(item.center_element)
 
-        binary_matrix = binarize_matrix(matrix)
-        print(binary_matrix)
-        w, b = locate_centroid(binary_matrix)
-        print(w, b)
-        print(calculate_distances(w))
+        # binary_matrix = binarize_matrix(matrix)
+        # print(binary_matrix)
+        # w, b = calculate_centroid(binary_matrix)
+        # print(w, b)
+        # #print(calculate_distances(w))
+        # print(calculate_average_distance(w, b))
+
+        print(calculate_average_pixelwidth(matrix))
 
         #print(find_longest_sequence(matrix))
         # dimensions = (1920, 1080)
